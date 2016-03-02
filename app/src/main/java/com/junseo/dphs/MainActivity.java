@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://pages/dapyungik"));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://messaging/765784586792493"));
                 startActivity(intent);
             }
         });
