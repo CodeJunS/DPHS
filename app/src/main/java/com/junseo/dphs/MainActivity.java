@@ -10,10 +10,10 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.graphics.Palette;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.support.design.widget.CollapsingToolbarLayout;
 
+import com.junseo.dphs.meal.MealActivity;
 import com.junseo.dphs.helper.SharedPreferenceManager;
 import com.junseo.dphs.var.FixedVar;
 
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         cardView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, IntroActivity.class);
+                Intent intent = new Intent(MainActivity.this, MealActivity.class);
                 startActivity(intent);
             }
         });
