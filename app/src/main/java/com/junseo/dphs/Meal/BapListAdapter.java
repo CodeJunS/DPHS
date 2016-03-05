@@ -137,8 +137,8 @@ public class BapListAdapter extends BaseAdapter {
         mHolder.mDayOfTheWeek.setText(mDayOfTheWeek);
         mHolder.mLunch.setText(mLunch);
         mHolder.mDinner.setText(mDinner);
-        mHolder.mKcal_Lunch.setText(mKcal_Lunch);
-        mHolder.mKcal_Dinner.setText(mKcal_Dinner);
+        mHolder.mKcal_Lunch.setText(mKcal_Lunch + " Kcal");
+        mHolder.mKcal_Dinner.setText(mKcal_Dinner + " Kcal");
 
         return convertView;
     }
