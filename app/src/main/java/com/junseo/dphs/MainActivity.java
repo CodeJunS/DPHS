@@ -49,15 +49,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        CardView cardView2 = (CardView) findViewById(R.id.notice_cardView);
-        cardView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NoticeActivity.class);
-                startActivity(intent);
-            }
-        });
-
         CardView cardView3 = (CardView) findViewById(R.id.meal_cardView);
         cardView3.setOnClickListener(new View.OnClickListener() {
             @Override

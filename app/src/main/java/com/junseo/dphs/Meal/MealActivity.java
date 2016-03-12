@@ -5,17 +5,27 @@ package com.junseo.dphs.meal;
  */
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.CardView;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.github.clans.fab.FloatingActionButton;
+import com.junseo.dphs.MainActivity;
 import com.junseo.dphs.R;
 
 import java.util.Calendar;
 
 
 public class MealActivity extends ActionBarActivity {
+
+    int position_select = 0;
+    boolean if_select = false;
     /**
      * 리스트뷰와 어뎁터
      */
@@ -64,6 +74,124 @@ public class MealActivity extends ActionBarActivity {
          * isUpdate=true로 설정하여 급식이 없을경우 BapDownloadTask를 실행합니다.
          */
         getBapList(true);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.share_lunch);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BapListData bld = mAdapter.getItem(position_select);
+
+                // List Adapter 생성
+                position_select = 0;
+                if_select = true;
+                final String items[] = {"월요일", "화요일", "수요일", "목요일", "금요일"};
+                AlertDialog.Builder ab = new AlertDialog.Builder(MealActivity.this);
+
+                ab.setTitle("요일 선택");
+                ab.setCancelable(false);
+                ab.setSingleChoiceItems(items, 0,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                // 각 리스트를 선택했을때
+                                position_select = whichButton;
+                                if_select = true;
+                            }
+                        });
+
+                ab.setPositiveButton("확인",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                // OK 버튼 클릭시 , 여기서 선택한 요일을 클립보드로 복사한다.
+
+                                if (if_select) {
+                                    BapListData bld = mAdapter.getItem(position_select);
+                                    //ㅇㅇ 이게 점심 가져오는 코드
+
+                                    Intent msg = new Intent(Intent.ACTION_SEND);
+
+                                    msg.addCategory(Intent.CATEGORY_DEFAULT);
+                                    msg.putExtra(Intent.EXTRA_SUBJECT, "[대평고등학교 급식정보]");
+                                    msg.putExtra(Intent.EXTRA_TEXT, "\n" + "<" + bld.mCalender + " " + bld.getmDayOfTheWeek() + " 중식>" + "\n\n" + bld.getmLunch() + "\n" + bld.mKcal_Lunch + " Kcal" + "\n\n#대평고등학교 앱");
+                                    msg.putExtra(Intent.EXTRA_TITLE, "대평고등학교 급식");
+                                    msg.setType("text/plain");
+                                    startActivity(Intent.createChooser(msg, "급식 공유하기"));
+                                    //Toast.makeText(MealActivity.this,bld.getmLunch(),Toast.LENGTH_SHORT).show();
+                                    if_select = false;
+                                } else {
+                                    Toast.makeText(MealActivity.this, "리스트에서 요일을 선택해주십시오.", Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+                        });
+                ab.setNegativeButton("취소",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                // Cancel 버튼 클릭시
+                                if_select = false;
+                            }
+                        });
+                ab.show();
+            }
+        });
+
+        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.share_dinner);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BapListData bld = mAdapter.getItem(position_select);
+
+                // List Adapter 생성
+                position_select = 0;
+                if_select = true;
+                final String items[] = {"월요일", "화요일", "수요일", "목요일", "금요일"};
+                AlertDialog.Builder ab = new AlertDialog.Builder(MealActivity.this);
+
+                ab.setTitle("요일 선택");
+                ab.setCancelable(false);
+                ab.setSingleChoiceItems(items, 0,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                // 각 리스트를 선택했을때
+                                position_select = whichButton;
+                                if_select = true;
+                            }
+                        });
+
+                ab.setPositiveButton("확인",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                // OK 버튼 클릭시 , 여기서 선택한 요일을 클립보드로 복사한다.
+
+                                if (if_select) {
+                                    BapListData bld = mAdapter.getItem(position_select);
+                                    //ㅇㅇ 이게 점심 가져오는 코드
+
+                                    Intent msg = new Intent(Intent.ACTION_SEND);
+
+                                    msg.addCategory(Intent.CATEGORY_DEFAULT);
+                                    msg.putExtra(Intent.EXTRA_SUBJECT, "[대평고등학교 급식정보]");
+                                    msg.putExtra(Intent.EXTRA_TEXT, "\n" + "<" + bld.mCalender + " " + bld.getmDayOfTheWeek() + " 석식>" + "\n\n" + bld.mDinner + "\n" + bld.mKcal_Dinner + " Kcal" + "\n\n#대평고등학교 앱");
+                                    msg.putExtra(Intent.EXTRA_TITLE, "대평고등학교 급식");
+                                    msg.setType("text/plain");
+                                    startActivity(Intent.createChooser(msg, "급식 공유하기"));
+                                    //Toast.makeText(MealActivity.this,bld.getmLunch(),Toast.LENGTH_SHORT).show();
+                                    if_select = false;
+                                } else {
+                                    Toast.makeText(MealActivity.this, "리스트에서 요일을 선택해주십시오.", Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+                        });
+                ab.setNegativeButton("취소",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                // Cancel 버튼 클릭시
+                                if_select = false;
+                            }
+                        });
+                ab.show();
+            }
+        });
     }
 
     private void getBapList(boolean isUpdate) {

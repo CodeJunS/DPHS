@@ -8,9 +8,9 @@
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/notice_cardView"
+        android:id="@+id/meal_cardView"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="200dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginTop="4dp"
@@ -18,33 +18,22 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_width="130dp"
-                android:layout_height="match_parent"
-                android:id="@+id/notice_imageView"
-                android:src="@drawable/ic_assignment_turned_in_24dp"
-                android:background="#44c0c2"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:padding="10dp" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:padding="10dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@+id/notice_imageView"
-                android:layout_toEndOf="@+id/notice_imageView"
-                android:gravity="center">
+                android:layout_height="wrap_content"
+                android:id="@+id/meal_Relative"
+                android:layout_marginTop="4dp">
 
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dp"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/notice_underBar"
-                    android:layout_below="@+id/notice_text"
+                    android:id="@+id/meal_underBar"
+                    android:layout_below="@+id/meal_text"
                     android:layout_centerHorizontal="true"
                     android:background="#bebdbd"
                     android:layout_marginLeft="30dp"
@@ -56,8 +45,8 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="공지사항"
-                    android:id="@+id/notice_text"
+                    android:text="급식 식단표"
+                    android:id="@+id/meal_text"
                     android:layout_alignParentTop="true"
                     android:gravity="center"
                     android:textSize="21dp" />
@@ -67,12 +56,56 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="설명"
-                    android:id="@+id/notice_explain"
+                    android:id="@+id/meal_explain"
                     android:gravity="center"
-                    android:layout_below="@+id/notice_underBar"
+                    android:layout_below="@+id/meal_underBar"
                     android:layout_centerHorizontal="true"
                     android:textSize="17dp" />
+            </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/meal_Relative">
+
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="fill_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/meal_verticalLine"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:focusable="false"
+                    android:background="#bebdbd"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView"
+                    android:src="@drawable/ic_restaurant_menu_blue_24dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toLeftOf="@+id/meal_verticalLine"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="밥은 계속 입에서 씹다보면 단맛이 나는데 이는 입안에서 녹말인 밥이 침인 아밀라아제에 의해 엿당으로 분해되기 때문이다."
+                    android:id="@+id/textView2"
+                    android:layout_toRightOf="@+id/meal_verticalLine"
+                    android:layout_alignTop="@+id/meal_verticalLine"
+                    android:layout_alignBottom="@+id/meal_verticalLine"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp" />
             </RelativeLayout>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
@@ -82,7 +115,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/facebook_cardView"
         android:layout_width="190dp"
-        android:layout_below="@+id/notice_cardView"
+        android:layout_below="@+id/meal_cardView"
         android:layout_height="260dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="10dp"
@@ -129,8 +162,8 @@
         card_view:cardCornerRadius="4dp"
         android:layout_alignTop="@+id/facebook_cardView"
         android:layout_toRightOf="@+id/facebook_cardView"
-        android:layout_alignRight="@+id/notice_cardView"
-        android:layout_alignEnd="@+id/notice_cardView">
+        android:layout_alignRight="@+id/meal_cardView"
+        android:layout_alignEnd="@+id/meal_cardView">
 
     </android.support.v7.widget.CardView>
 
@@ -206,114 +239,6 @@
                 android:textSize="25dp" />
 
         </RelativeLayout>
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/meal_cardView"
-        android:layout_below="@+id/suneung_cardView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        card_view:cardCornerRadius="4dp"
-        android:layout_marginTop="10dp"
-        android:layout_alignLeft="@+id/facebook_cardView"
-        android:layout_alignStart="@+id/facebook_cardView"
-        android:layout_alignRight="@+id/suneung_cardView"
-        android:layout_alignEnd="@+id/suneung_cardView">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="4dp"
-            android:padding="10dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/meal_Relative"
-                android:layout_marginTop="4dp">
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="0.5dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/meal_underBar"
-                android:layout_below="@+id/meal_text"
-                android:layout_centerHorizontal="true"
-                android:background="#bebdbd"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="급식 식단표"
-                android:id="@+id/meal_text"
-                android:layout_alignParentTop="true"
-                android:gravity="center"
-                android:textSize="21dp" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="설명"
-                android:id="@+id/meal_explain"
-                android:gravity="center"
-                android:layout_below="@+id/meal_underBar"
-                android:layout_centerHorizontal="true"
-                android:textSize="17dp" />
-                </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/meal_Relative">
-
-
-                <TextView
-                    android:layout_width="0.5dp"
-                    android:layout_height="fill_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/meal_verticalLine"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    android:focusable="false"
-                    android:background="#bebdbd"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageView"
-                    android:src="@drawable/ic_restaurant_menu_blue_24dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_toLeftOf="@+id/meal_verticalLine"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:padding="10dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="밥은 계속 입에서 씹다보면 단맛이 나는데 이는 입안에서 녹말인 밥이 침인 아밀라아제에 의해 엿당으로 분해되기 때문이다."
-                    android:id="@+id/textView2"
-                    android:layout_toRightOf="@+id/meal_verticalLine"
-                    android:layout_alignTop="@+id/meal_verticalLine"
-                    android:layout_alignBottom="@+id/meal_verticalLine"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:gravity="center"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp" />
-            </RelativeLayout>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
