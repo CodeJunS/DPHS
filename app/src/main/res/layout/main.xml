@@ -96,7 +96,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="밥은 계속 입에서 씹다보면 단맛이 나는데 이는 입안에서 녹말인 밥이 침인 아밀라아제에 의해 엿당으로 분해되기 때문이다."
+                    android:text="쎄세ㅓㅁ니ㅏ어ㅗㅁ지ㅐㅑㅕㅕㄹ어나ㅗㅕㅑㅣㅇㄹㄴㄴㅇ라ㅣ허ㅗㄴㅇ리호녁ㅇㅎㄹ"
                     android:id="@+id/textView2"
                     android:layout_toRightOf="@+id/meal_verticalLine"
                     android:layout_alignTop="@+id/meal_verticalLine"
@@ -245,7 +245,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/meal_cardView">
+        android:layout_below="@+id/facebook_cardView">
 
         <TextView
             android:layout_width="wrap_content"

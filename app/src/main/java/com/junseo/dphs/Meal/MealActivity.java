@@ -7,10 +7,12 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -23,6 +25,8 @@ import java.util.Calendar;
 
 
 public class MealActivity extends ActionBarActivity {
+
+    Toolbar toolbar;
 
     int position_select = 0;
     boolean if_select = false;
@@ -56,6 +60,21 @@ public class MealActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar); //툴바설정
+        toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
+        setSupportActionBar(toolbar);//액션바와 같게 만들어줌
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //툴바 뒤로가기
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back_24dp));
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //What to do on back clicked
+                finish();
+            }
+        });
 
         /**
          * 지금 날짜를 가져오기 위한 Calendar 생성
