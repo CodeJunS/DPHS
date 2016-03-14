@@ -217,7 +217,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="2016.00.00"
-                android:id="@+id/suneung_explain"
+                android:id="@+id/ddayText"
                 android:gravity="center"
                 android:layout_below="@+id/suneung_underBar"
                 android:layout_centerHorizontal="true"
@@ -236,7 +236,8 @@
                 android:gravity="center"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentTop="true"
-                android:textSize="25dp" />
+                android:textSize="25dp"
+                android:id="@+id/resultText" />
 
         </RelativeLayout>
         </RelativeLayout>
