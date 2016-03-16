@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView resultText;
 
     private int dYear=2016;        //디데이 연월일 변수
-    private int dMonth=4;
-    private int dDay=15;
+    private int dMonth=11;
+    private int dDay=10;
 
     private int tYear;           //오늘 연월일 변수
     private int tMonth;

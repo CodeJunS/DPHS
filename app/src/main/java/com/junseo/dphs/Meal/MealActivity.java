@@ -13,6 +13,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -369,5 +371,34 @@ public class MealActivity extends ActionBarActivity {
             mDialog.dismiss();
 
         mCalendar = null;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+
+            AlertDialog.Builder alert = new AlertDialog.Builder(MealActivity.this);
+            alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();  //닫기
+                }
+            });
+            alert.setTitle("알레르기 정보");
+            alert.setMessage(" ① 난류\n ② 우유\n ③ 메밀\n ④ 땅콩\n ⑤ 대두\n ⑥ 밀\n ⑦ 고등어\n ⑧ 게\n ⑨ 새우\n ⑩ 돼지고기\n ⑪ 복숭아\n ⑫ 토마토\n ⑬ 아황산염\n ⑭ 호두\n ⑮ 닭고기\n ⑯ 소고기\n ⑰ 오징어\n ⑱ 전복\n ⑲ 홍합");
+            alert.show();
+
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
