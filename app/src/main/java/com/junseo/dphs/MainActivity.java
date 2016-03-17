@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.widget.TextView;
 
+import com.junseo.dphs.info.School_Info;
 import com.junseo.dphs.meal.MealActivity;
 import com.junseo.dphs.helper.SharedPreferenceManager;
 import com.junseo.dphs.var.FixedVar;
@@ -65,8 +66,19 @@ public class MainActivity extends AppCompatActivity {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://messaging/765784586792493"));
-                startActivity(intent);
+                switch (v.getId()) {
+                    case R.id.facebook_cardView:
+                        try {
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://messaging/765784586792493"));
+                            startActivity(intent);
+                            break;
+                        } catch (Exception e) {
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.facebook.katana")));
+                            break;
+                        }
+                    default:
+                        break;
+                }
             }
         });
 
@@ -76,6 +88,25 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MealActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        CardView cardView4 = (CardView) findViewById(R.id.schoolEx_cardView);
+        cardView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("http://www.daepyeong.hs.kr");
+                Intent it = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(it);
+            }
+        });
+
+        CardView cardView5 = (CardView) findViewById(R.id.school_info_cardView);
+        cardView5.setOnClickListener(new View.OnClickListener(){
+            @Override
+                    public void onClick(View v) {
+                Intent intent2 = new Intent(MainActivity.this, School_Info.class);
+                startActivity(intent2);
             }
         });
 
@@ -110,6 +141,9 @@ public class MainActivity extends AppCompatActivity {
         else{
             int absR=Math.abs(resultNumber);
             resultText.setText(String.format("D+%d", absR));
+        }
+        if(resultNumber==0){
+            resultText.setText(String.format("D-DAY", resultNumber));
         }
     }
 

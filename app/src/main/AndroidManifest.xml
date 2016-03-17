@@ -23,6 +23,8 @@
             android:label="intro" />
         <activity android:name=".meal.MealActivity"
             android:label="급식식단표" />
+        <activity android:name=".info.School_Info"
+            android:label="학교정보" />
     </application>
 
 </manifest>
