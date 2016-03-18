@@ -25,6 +25,8 @@
             android:label="급식식단표" />
         <activity android:name=".info.School_Info"
             android:label="학교정보" />
+        <activity android:name=".Setting"
+        android:label="설정" />
     </application>
 
 </manifest>

@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView ddayText;
     private TextView resultText;
 
-    private int dYear=2016;        //디데이 연월일 변수
-    private int dMonth=11;
-    private int dDay=10;
+    private int dYear = 2016;        //디데이 연월일 변수
+    private int dMonth = 11;
+    private int dDay = 10;
 
     private int tYear;           //오늘 연월일 변수
     private int tMonth;
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private long t;
     private long r;
 
-    private int resultNumber=0;
+    private int resultNumber = 0;
 
     CollapsingToolbarLayout collapsingToolbarLayout;
     ImageView image;
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         if (spm2.getIntroPref()) {
             startActivity(new Intent(MainActivity.this, IntroActivity.class));
             finish();
-        }else {
+        } else {
         }
 
         CardView cardView = (CardView) findViewById(R.id.facebook_cardView);
@@ -104,47 +104,46 @@ public class MainActivity extends AppCompatActivity {
         });
 
         CardView cardView5 = (CardView) findViewById(R.id.school_info_cardView);
-        cardView5.setOnClickListener(new View.OnClickListener(){
+        cardView5.setOnClickListener(new View.OnClickListener() {
             @Override
-                    public void onClick(View v) {
+            public void onClick(View v) {
                 Intent intent2 = new Intent(MainActivity.this, School_Info.class);
                 startActivity(intent2);
             }
         });
 
-        ddayText=(TextView)findViewById(R.id.ddayText);
-        resultText=(TextView)findViewById(R.id.resultText);
+        ddayText = (TextView) findViewById(R.id.ddayText);
+        resultText = (TextView) findViewById(R.id.resultText);
 
-        Calendar calendar =Calendar.getInstance();              //현재 날짜 불러옴
+        Calendar calendar = Calendar.getInstance();              //현재 날짜 불러옴
         tYear = calendar.get(Calendar.YEAR);
         tMonth = calendar.get(Calendar.MONTH);
         tDay = calendar.get(Calendar.DAY_OF_MONTH);
 
-        Calendar dCalendar =Calendar.getInstance();
+        Calendar dCalendar = Calendar.getInstance();
         dCalendar.set(dYear, dMonth - 1, dDay);
 
-        t=calendar.getTimeInMillis();                 //오늘 날짜를 밀리타임으로 바꿈
-        d=dCalendar.getTimeInMillis();              //디데이날짜를 밀리타임으로 바꿈
-        Log.d("daylog", "current time : "+ t +" set time : " + d);
-        r=(d-t)/(24*60*60*1000);                 //디데이 날짜에서 오늘 날짜를 뺀 값을 '일'단위로 바꿈
-        Log.d("daylog", "so day : " + r );
+        t = calendar.getTimeInMillis();                 //오늘 날짜를 밀리타임으로 바꿈
+        d = dCalendar.getTimeInMillis();              //디데이날짜를 밀리타임으로 바꿈
+        Log.d("daylog", "current time : " + t + " set time : " + d);
+        r = (d - t) / (24 * 60 * 60 * 1000);                 //디데이 날짜에서 오늘 날짜를 뺀 값을 '일'단위로 바꿈
+        Log.d("daylog", "so day : " + r);
 
-        resultNumber=(int)r;
+        resultNumber = (int) r;
         updateDisplay();
     }
 
-    private void updateDisplay(){
+    private void updateDisplay() {
 
-        ddayText.setText(String.format("%d년 %d월 %d일",dYear, dMonth, dDay));
+        ddayText.setText(String.format("%d년 %d월 %d일", dYear, dMonth, dDay));
 
-        if(resultNumber>=0){
+        if (resultNumber >= 0) {
             resultText.setText(String.format("D-%d", resultNumber));
-        }
-        else{
-            int absR=Math.abs(resultNumber);
+        } else {
+            int absR = Math.abs(resultNumber);
             resultText.setText(String.format("D+%d", absR));
         }
-        if(resultNumber==0){
+        if (resultNumber == 0) {
             resultText.setText(String.format("D-DAY", resultNumber));
         }
     }
@@ -172,6 +171,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+
+            Intent intent = new Intent(MainActivity.this, Setting.class);
+            startActivity(intent);
 
             return true;
         }

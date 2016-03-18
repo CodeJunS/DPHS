@@ -3,6 +3,7 @@ package com.junseo.dphs.info;
 /**
  * Created by Junseo on 16. 3. 18..
  */
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,9 +12,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
 import it.neokree.materialtabs.MaterialTabListener;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.view.ViewGroup;
@@ -69,7 +72,7 @@ public class School_Info extends ActionBarActivity implements MaterialTabListene
             }
         });
 
-        adapter = new PageAdapter(getSupportFragmentManager(),School_Info.this);
+        adapter = new PageAdapter(getSupportFragmentManager(), School_Info.this);
         pager.setAdapter(adapter);
         pager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
