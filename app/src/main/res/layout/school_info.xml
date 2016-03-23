@@ -42,7 +42,7 @@
         fab:menu_colorNormal="@color/colorPrimary"
         fab:menu_colorPressed="@color/colorAccent"
         fab:menu_colorRipple="#99FFFFFF"
-        fab:menu_fab_label="급식 공유하기"
+        fab:menu_fab_label="학교 연락"
         fab:menu_icon="@drawable/ic_add_24dp"
         fab:menu_labels_colorNormal="#333333"
         fab:menu_labels_colorPressed="#444444"
