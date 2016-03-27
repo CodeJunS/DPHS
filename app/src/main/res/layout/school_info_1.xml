@@ -9,11 +9,13 @@
         android:layout_height="150dp"
         app:contentPadding="5dp"
         app:cardUseCompatPadding="true"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="1dp"
         layout_width="match_parent"
         layout_height="match_parent"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/view">
+        android:id="@+id/view"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -51,7 +53,8 @@
                 android:layout_toRightOf="@+id/imageView3"
                 android:layout_alignRight="@+id/textView8"
                 android:layout_alignEnd="@+id/textView8"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
@@ -63,13 +66,17 @@
         android:layout_height="150dp"
         app:contentPadding="5dp"
         app:cardUseCompatPadding="true"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="1dp"
         layout_width="match_parent"
         layout_height="match_parent"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/view2"
         android:layout_below="@+id/view"
-        android:layout_above="@+id/textView9">
+        android:layout_above="@+id/textView9"
+        android:layout_alignLeft="@+id/view"
+        android:layout_alignStart="@+id/view"
+        android:layout_alignRight="@+id/view"
+        android:layout_alignEnd="@+id/view">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -80,7 +87,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="교장선생님 말씀"
+                android:text="준비중 입니다."
                 android:id="@+id/textView15"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true" />

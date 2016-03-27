@@ -35,7 +35,7 @@ public class PageAdapter extends FragmentStatePagerAdapter {
         } else if (position == 1) {
             return "학교상징";
         } else if (position == 2) {
-            return "오시는 길";
+            return "오시는길";
         } else {
             return null;
         }

@@ -6,4 +6,24 @@
     <string name="no_network_msg">인터넷 연결이 안되서 데이터를 다운로드 할 수 없습니다</string>
     <string name="no_data_lunch">점심이 없습니다.</string>
     <string name="no_data_dinner">저녁이 없습니다.</string>
+    <string name="open_license">\n- Jericho HTML Parser
+\n (http://jericho.htmlparser.net/docs/index.html)
+\n
+\n- Android Meal Library
+\n (https://bitbucket.org/whdghks913/wondanghighschool) (http://itmir.tistory.com/486) (http://blog.naver.com/rimal/140186322365)
+\n
+\n- Android Support Library
+\n com.android.support:appcompat-v7:23.1.1
+\n com.android.support:support-v4:23.1.1
+\n com.android.support:design:23.1.1
+\n com.android.support:palette-v7:23.1.1
+\n com.github.paolorotolo:appintro:3.4.0
+\n com.android.support:cardview-v7:23.2.0
+\n
+\n- Material Tabs Library
+\n it.neokree:MaterialTabs:0.11
+\n
+\n- Android Floating Button Library
+\n com.github.clans:fab:1.6.2
+    </string>
 </resources>
