@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:padding="10dp" >
+    android:orientation="vertical"
+    android:padding="10dp">
 
-    <android.support.v7.widget.CardView
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/meal_cardView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginTop="4dp"
-        card_view:cardCornerRadius="0.7dp" >
+        card_view:cardCornerRadius="0.7dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -23,44 +22,45 @@
             android:padding="10dp">
 
             <RelativeLayout
+                android:id="@+id/meal_Relative"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/meal_Relative"
                 android:layout_marginTop="4dp">
 
                 <TextView
+                    android:id="@+id/meal_underBar"
                     android:layout_width="fill_parent"
                     android:layout_height="1dp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/meal_underBar"
                     android:layout_below="@+id/meal_text"
                     android:layout_centerHorizontal="true"
-                    android:background="#bebdbd"
+                    android:layout_marginBottom="5dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp" />
+                    android:background="#bebdbd"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <TextView
+                    android:id="@+id/meal_text"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="급식 식단표"
-                    android:id="@+id/meal_text"
                     android:layout_alignParentTop="true"
                     android:gravity="center"
+                    android:text="급식 식단표"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textIsSelectable="false"
                     android:textSize="21sp"
-                    android:textIsSelectable="false" />
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/meal_explain"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="맛있는 식단표를 확인합니다."
-                    android:id="@+id/meal_explain"
-                    android:gravity="center"
                     android:layout_below="@+id/meal_underBar"
                     android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="맛있는 식단표를 확인합니다."
+                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textSize="16sp" />
             </RelativeLayout>
 
@@ -71,101 +71,100 @@
 
 
                 <TextView
+                    android:id="@+id/meal_verticalLine"
                     android:layout_width="1dp"
                     android:layout_height="fill_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/meal_verticalLine"
-                    android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
-                    android:focusable="false"
-                    android:background="#bebdbd"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="15dp"
                     android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp" />
+                    android:background="#bebdbd"
+                    android:focusable="false"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <ImageView
+                    android:id="@+id/imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageView"
-                    android:src="@drawable/ic_restaurant_menu_blue_24dp"
                     android:layout_alignParentBottom="true"
-                    android:layout_toLeftOf="@+id/meal_verticalLine"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
-                    android:padding="10dp" />
+                    android:layout_toLeftOf="@+id/meal_verticalLine"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_restaurant_menu_blue_24dp" />
 
                 <TextView
+                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="항상 맛있는 급식을 준비해 주시는 급식 아주머니들께 감사하는 마음을 가지고 식사를 합시다"
-                    android:id="@+id/textView2"
-                    android:layout_toRightOf="@+id/meal_verticalLine"
-                    android:layout_alignTop="@+id/meal_verticalLine"
                     android:layout_alignBottom="@+id/meal_verticalLine"
-                    android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/meal_verticalLine"
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
+                    android:layout_toRightOf="@+id/meal_verticalLine"
+                    android:gravity="center"
+                    android:text="항상 맛있는 급식을 준비해 주시는 급식 아주머니들께 감사하는 마음을 가지고 식사를 합시다"
                     android:textSize="13sp" />
             </RelativeLayout>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/facebook_cardView"
         android:layout_width="190dp"
-        android:layout_below="@+id/meal_cardView"
         android:layout_height="260dp"
+        android:layout_below="@+id/meal_cardView"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-        card_view:cardCornerRadius="0.7dp" >
+        card_view:cardCornerRadius="0.7dp">
 
         <RelativeLayout
+            android:id="@+id/facebook_Relative"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/facebook_Relative">
+            android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/facebook_image"
                 android:layout_width="wrap_content"
                 android:layout_height="190dp"
-                android:id="@+id/facebook_image"
                 android:src="@drawable/facebook" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/facebook_image"
-                android:layout_alignParentBottom="true">
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/facebook_image">
 
                 <TextView
+                    android:id="@+id/unknown_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="대평고등학교 익명"
-                    android:id="@+id/unknown_text"
-                    android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
-                    android:textSize="18dp" />
+                    android:layout_centerVertical="true"
+                    android:text="대평고등학교 익명"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/schoolEx_cardView"
         android:layout_width="match_parent"
         android:layout_height="125dp"
-        card_view:cardCornerRadius="0.7dp"
+        android:layout_alignEnd="@+id/meal_cardView"
+        android:layout_alignRight="@+id/meal_cardView"
         android:layout_alignTop="@+id/facebook_cardView"
         android:layout_toRightOf="@+id/facebook_cardView"
-        android:layout_alignRight="@+id/meal_cardView"
-        android:layout_alignEnd="@+id/meal_cardView">
+        card_view:cardCornerRadius="0.7dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -175,193 +174,269 @@
 
 
             <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:id="@+id/imageView2"
-                android:src="@drawable/ic_public_24dp"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_public_24dp" />
 
             <TextView
+                android:id="@+id/textView5"
                 android:layout_width="100dp"
                 android:layout_height="1dp"
-                android:id="@+id/textView5"
-                android:background="#bebdbd"
                 android:layout_below="@+id/imageView2"
                 android:layout_centerHorizontal="true"
+                android:layout_marginBottom="4dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp" />
+                android:background="#bebdbd" />
 
             <TextView
+                android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="학교 홈페이지"
-                android:id="@+id/textView6"
                 android:layout_below="@+id/textView5"
                 android:layout_centerHorizontal="true"
+                android:text="학교 홈페이지"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#000000"
                 android:textSize="20sp"
-                android:textColor="#000000" />
+                android:textStyle="bold" />
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/suneung_cardView"
         android:layout_width="match_parent"
         android:layout_height="125dp"
-        card_view:cardCornerRadius="0.7dp"
         android:layout_alignBottom="@+id/facebook_cardView"
-        android:layout_toRightOf="@+id/facebook_cardView"
-        android:layout_alignRight="@+id/schoolEx_cardView"
         android:layout_alignEnd="@+id/schoolEx_cardView"
-        android:padding="4dp">
+        android:layout_alignRight="@+id/schoolEx_cardView"
+        android:layout_toRightOf="@+id/facebook_cardView"
+        android:padding="4dp"
+        card_view:cardCornerRadius="0.7dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="4dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/suneung_Relative" >
+            <RelativeLayout
+                android:id="@+id/suneung_Relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/suneung_underBar"
-                android:layout_below="@+id/suneung_text"
-                android:layout_centerHorizontal="true"
-                android:background="#bebdbd"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp" />
+                <TextView
+                    android:id="@+id/suneung_underBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/suneung_text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#bebdbd"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
 
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="2016학년도 수능"
-                android:id="@+id/suneung_text"
-                android:gravity="center"
-                android:textSize="21dp" />
+                <TextView
+                    android:id="@+id/suneung_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="2016학년도 수능"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="21dp" />
 
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="2016.00.00"
-                android:id="@+id/ddayText"
-                android:gravity="center"
-                android:layout_below="@+id/suneung_underBar"
-                android:layout_centerHorizontal="true"
-                android:textSize="17dp"
-                android:textColor="#808080" />
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/ddayText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/suneung_underBar"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="2016.00.00"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#808080"
+                    android:textSize="17dp" />
+            </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/suneung_Relative">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/suneung_Relative">
 
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="D-000"
-                android:gravity="center"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentTop="true"
-                android:textSize="25dp"
-                android:id="@+id/resultText" />
+                <TextView
+                    android:id="@+id/resultText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center"
+                    android:text="D-000"
+                    android:textSize="25dp" />
 
-        </RelativeLayout>
+            </RelativeLayout>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/view3"
         android:layout_width="match_parent"
         android:layout_height="125dp"
-        card_view:cardCornerRadius="0.7dp"
-        android:padding="4dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/suneung_cardView"
-        android:layout_alignRight="@+id/suneung_cardView"
-        android:layout_alignEnd="@+id/suneung_cardView"
         android:layout_alignLeft="@+id/facebook_cardView"
-        android:layout_alignStart="@+id/facebook_cardView"
-        android:id="@+id/school_info_cardView">
+        android:layout_alignRight="@+id/suneung_cardView"
+        android:layout_below="@+id/facebook_cardView"
+        android:layout_marginTop="10dp"
+        android:padding="4dp"
+        card_view:cardCornerRadius="0.7dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center">
 
-
             <TextView
+                android:id="@+id/notice_line"
                 android:layout_width="1dp"
                 android:layout_height="fill_parent"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/info_line"
-                android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:focusable="false"
-                android:background="#bebdbd"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="15dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp" />
+                android:background="#bebdbd"
+                android:focusable="false"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/info_imageView"
-                android:src="@drawable/ic_school_blue_24dp"
-                android:layout_alignParentBottom="true"
-                android:layout_toLeftOf="@+id/info_line"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
+                android:id="@+id/imageView5"
+                android:src="@drawable/ic_assignment_turned_in_blue_24dp"
+                android:layout_toRightOf="@+id/notice_line"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:padding="10dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/notice_line"
+                android:layout_toStartOf="@+id/notice_line"
+                android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="학교정보를 확인합니다."
-                android:id="@+id/info_text"
-                android:layout_toRightOf="@+id/info_line"
-                android:layout_alignBottom="@+id/info_line"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="공지사항"
+                android:id="@+id/textView17"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:textSize="20sp"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:gravity="center"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
-                android:textSize="13sp"
-                android:layout_below="@+id/textView7"
-                android:layout_marginBottom="20dp" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="학교정보"
-                android:id="@+id/textView7"
-                android:layout_alignTop="@+id/info_line"
-                android:layout_alignLeft="@+id/info_text"
-                android:layout_alignStart="@+id/info_text"
-                android:layout_alignRight="@+id/info_text"
-                android:layout_alignEnd="@+id/info_text"
+                android:text="공지사항을 확인합니다."
+                android:id="@+id/textView18"
                 android:gravity="center"
-                android:layout_marginTop="20dp"
-                android:textSize="20sp"
-                android:textColor="#000000" />
-        </RelativeLayout>
+                android:layout_below="@+id/textView17"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="13sp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
 
-        </android.support.v7.widget.CardView>
+                </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/school_info_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_alignLeft="@+id/facebook_cardView"
+        android:layout_alignRight="@+id/suneung_cardView"
+        android:layout_below="@+id/view3"
+        android:layout_marginTop="10dp"
+        android:padding="4dp"
+        card_view:cardCornerRadius="0.7dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/info_line"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:background="#bebdbd"
+                android:focusable="false"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <ImageView
+                android:id="@+id/info_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/info_line"
+                android:padding="10dp"
+                android:src="@drawable/ic_school_blue_24dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/info_line"
+                android:layout_toEndOf="@+id/info_line"
+                android:gravity="center">
+
+            <TextView
+                android:id="@+id/info_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="학교정보를 확인합니다."
+                android:textSize="13sp"
+                android:layout_below="@+id/textView7" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/info_text"
+                android:layout_alignLeft="@+id/info_text"
+                android:layout_alignRight="@+id/info_text"
+                android:layout_alignStart="@+id/info_text"
+                android:gravity="center"
+                android:text="학교정보"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+                </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -369,12 +444,12 @@
         android:layout_below="@+id/school_info_cardView">
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:id="@+id/textView"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
     </RelativeLayout>
 
