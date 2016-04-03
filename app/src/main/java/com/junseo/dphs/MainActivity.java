@@ -112,6 +112,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        CardView cardView6 = (CardView) findViewById(R.id.notice_CardView);
+        cardView6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(MainActivity.this, NoticeActivity.class);
+                startActivity(intent2);
+            }
+        });
+
         ddayText = (TextView) findViewById(R.id.ddayText);
         resultText = (TextView) findViewById(R.id.resultText);
 

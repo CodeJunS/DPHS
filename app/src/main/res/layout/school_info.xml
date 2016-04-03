@@ -66,16 +66,16 @@
             android:id="@+id/call_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_restaurant_menu_24dp"
-            fab:fab_label="행정실"
+            android:src="@drawable/ic_call_24dp"
+            fab:fab_label="본교무실"
             fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/call_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_restaurant_menu_24dp"
-            fab:fab_label="교무실"
+            android:src="@drawable/ic_call_24dp"
+            fab:fab_label="행정실"
             fab:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>

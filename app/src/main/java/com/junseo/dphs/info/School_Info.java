@@ -59,7 +59,7 @@ public class School_Info extends ActionBarActivity implements MaterialTabListene
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_DIAL,
-                        Uri.parse("tel:070-8620-4500"));
+                        Uri.parse("tel:031-2593-999"));
                 startActivity(intent);
             }
         });
@@ -67,7 +67,7 @@ public class School_Info extends ActionBarActivity implements MaterialTabListene
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_DIAL,
-                        Uri.parse("tel:070-8620-4560"));
+                        Uri.parse("tel:031-2593-804"));
                 startActivity(intent);
             }
         });
