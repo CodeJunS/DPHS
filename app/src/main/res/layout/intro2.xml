@@ -17,7 +17,7 @@
         android:textColor="#ffffff"
         android:paddingRight="32dp"
         android:textSize="28sp"
-        android:id="@+id/title"
+        android:id="@+id/textTitle"
         android:text="최신 데이터 제공"/>
 
     <LinearLayout

@@ -17,7 +17,7 @@
         android:textColor="#ffffff"
         android:paddingRight="32dp"
         android:textSize="27sp"
-        android:id="@+id/title"
+        android:id="@+id/textTitle"
         android:text="학교정보를 한눈에 확인하세요"/>
 
     <LinearLayout

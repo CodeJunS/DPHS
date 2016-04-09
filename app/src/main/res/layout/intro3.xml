@@ -17,7 +17,7 @@
         android:textColor="#ffffff"
         android:paddingRight="32dp"
         android:textSize="28sp"
-        android:id="@+id/title"
+        android:id="@+id/textTitle"
         android:text="맛있는 급식을 바로 확인"/>
 
     <LinearLayout
