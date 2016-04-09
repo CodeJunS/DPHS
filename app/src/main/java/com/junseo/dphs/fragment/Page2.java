@@ -3,6 +3,7 @@ package com.junseo.dphs.fragment;
 /**
  * Created by Junseo on 16. 3. 18..
  */
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -15,48 +16,20 @@ import android.view.ViewGroup;
 
 import com.junseo.dphs.R;
 
-
+@SuppressLint("ValidFragment")
 public class Page2 extends Fragment {
-    public View view;
-
-    private Context context;
+    Context mContext;
 
     public Page2(Context context) {
-        this.context = context;
+        mContext = context;
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        view = inflater.inflate(R.layout.school_info_2, container, false);
-
-
-        /* FloatingActionsMenu rightLabels = (FloatingActionsMenu) view.findViewById(R.id.pci);
-
-        view.findViewById(R.id.action_pci1).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL,
-                        Uri.parse("tel:070-8620-4500"));
-                startActivity(intent);
-            }
-        });
-        view.findViewById(R.id.action_pci2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL,
-                        Uri.parse("tel:070-8620-4560"));
-                startActivity(intent);
-            }
-        }); */
-
-
-        /*FloatingActionButton addedTwice = new FloatingActionButton(context);
-        addedTwice.setTitle("Added twice");
-        rightLabels.addButton(addedTwice);
-        rightLabels.removeButton(addedTwice);
-        rightLabels.addButton(addedTwice);*/
+    public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.school_info_2, null);
 
         return view;
     }
+
 }

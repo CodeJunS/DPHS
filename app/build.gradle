@@ -32,5 +32,4 @@ dependencies {
     compile 'net.htmlparser.jericho:jericho-html:3.4'
     compile 'com.github.clans:fab:1.6.2'
     compile 'it.neokree:MaterialTabs:0.11'
-
 }

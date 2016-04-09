@@ -47,24 +47,24 @@ public class NoticeBBSAdapter extends BaseAdapter {
         View v = layoutInflater.inflate(R.layout.type_bbs, null);
 
         NoticeBBSData nD = nbds.get(position);
-        TextView title = (TextView) v.findViewById(R.id.textTitle);
-        TextView date = (TextView) v.findViewById(R.id.textDate);
-        TextView hit = (TextView) v.findViewById(R.id.textHit);
-        TextView writer = (TextView) v.findViewById(R.id.textWriter);
+        TextView title = (TextView) v.findViewById(R.id.item_title);
+        TextView date = (TextView) v.findViewById(R.id.item_date);
+        TextView hit = (TextView) v.findViewById(R.id.item_hit);
+        TextView writer = (TextView) v.findViewById(R.id.item_writer);
 
         title.setText(nD.getTitle());
         date.setText(nD.getDate());
-        hit.setText(nD.getHit()+"");
-        writer.setText(nD.getWriter());
+        hit.setText(nD.getHit() + "");
+        writer.setText(nD.getWriter() + " 선생님");
         return v;
     }
 
-    public int getNowPage(){
+    public int getNowPage() {
         nowPage += 1;
-        return  nowPage;
+        return nowPage;
     }
 
-    public void addItem(NoticeBBSData nD){
+    public void addItem(NoticeBBSData nD) {
         nbds.add(nD);
     }
 }
