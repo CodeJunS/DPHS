@@ -19,7 +19,6 @@ import android.widget.TextView;
 
 import com.junseo.dphs.helper.SharedPreferenceManager;
 import com.junseo.dphs.info.School_Info;
-import com.junseo.dphs.parse.DataParser;
 import com.junseo.dphs.var.FixedVar;
 
 import java.util.Calendar;

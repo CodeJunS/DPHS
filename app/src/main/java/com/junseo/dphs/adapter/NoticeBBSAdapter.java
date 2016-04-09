@@ -18,9 +18,10 @@ import java.util.ArrayList;
 public class NoticeBBSAdapter extends BaseAdapter {
 
     private Context context;
-    private ArrayList<NoticeBBSData> nbds;
+    private ArrayList<NoticeBBSData> nbds = new ArrayList<>();
+    private int nowPage = 0;
 
-    public NoticeBBSAdapter(Context context, ArrayList<NoticeBBSData> nbds) {
+    public NoticeBBSAdapter(Context context) {
         this.context = context;
         this.nbds = nbds;
     }
@@ -56,5 +57,14 @@ public class NoticeBBSAdapter extends BaseAdapter {
         hit.setText(nD.getHit()+"");
         writer.setText(nD.getWriter());
         return v;
+    }
+
+    public int getNowPage(){
+        nowPage += 1;
+        return  nowPage;
+    }
+
+    public void addItem(NoticeBBSData nD){
+        nbds.add(nD);
     }
 }
