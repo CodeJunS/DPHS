@@ -33,7 +33,7 @@
         <Preference
             android:key="setting_2_2"
             android:title="앱 아이콘 제작"
-            android:summary="누가할까"
+            android:summary="방준서"
             android:defaultValue="true"/>
     </PreferenceCategory>
 
