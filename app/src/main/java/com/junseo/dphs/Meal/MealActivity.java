@@ -134,7 +134,6 @@ public class MealActivity extends ActionBarActivity {
                                     msg.putExtra(Intent.EXTRA_TITLE, "대평고등학교 급식");
                                     msg.setType("text/plain");
                                     startActivity(Intent.createChooser(msg, "급식 공유하기"));
-                                    //Toast.makeText(MealActivity.this,bld.getmLunch(),Toast.LENGTH_SHORT).show();
                                     if_select = false;
                                 } else {
                                     Toast.makeText(MealActivity.this, "리스트에서 요일을 선택해주십시오.", Toast.LENGTH_SHORT).show();

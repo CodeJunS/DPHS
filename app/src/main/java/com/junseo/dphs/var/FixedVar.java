@@ -12,5 +12,7 @@ public class FixedVar {
 
     public static final int PREF_INTRO = 203;
 
+    public static final String HP_ROOT = "http://daepyeong.hs.kr/";
+    public static final String MODULE_NOTICE = "notice.brd";
 
 }
