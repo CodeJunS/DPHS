@@ -1,6 +1,8 @@
 package com.junseo.dphs;
 
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.junseo.dphs.adapter.NoticeBBSAdapter;
 import com.junseo.dphs.data.NoticeBBSData;
@@ -25,6 +28,11 @@ public class NoticeActivity extends AppCompatActivity implements AbsListView.OnS
     private int preLast;
 
     Toolbar toolbar;
+
+    private ConnectivityManager cManager;
+    private NetworkInfo mobile;
+    private NetworkInfo wifi;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +51,11 @@ public class NoticeActivity extends AppCompatActivity implements AbsListView.OnS
             }
         });
 
+        if (isInternetCon()) { //false 반환시 if 문안의 로직 실행
+            Toast.makeText(NoticeActivity.this, "인터넷에 연결되지않아 불러오기를 중단합니다.", Toast.LENGTH_SHORT).show();
+            finish();
+        } else { //인터넷 체크 통과시 실행할 로직
+            }
 
         ListView listView = (ListView) findViewById(R.id.listView);
         noticeBBSAdapter = new NoticeBBSAdapter(this);
@@ -80,5 +93,12 @@ public class NoticeActivity extends AppCompatActivity implements AbsListView.OnS
                     }
                 }
         }
+    }
+
+    private boolean isInternetCon() {
+        cManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        mobile = cManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE); //모바일 데이터 여부
+        wifi = cManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI); //와이파이 여부
+        return !mobile.isConnected() && !wifi.isConnected(); //결과값을 리턴
     }
 }
