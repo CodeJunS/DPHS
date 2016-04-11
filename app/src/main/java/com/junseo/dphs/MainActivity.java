@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.junseo.dphs.helper.SharedPreferenceManager;
 import com.junseo.dphs.info.School_Info;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int dYear = 2016;        //디데이 연월일 변수
     private int dMonth = 11;
-    private int dDay = 10;
+    private int dDay = 17;
 
     private int tYear;           //오늘 연월일 변수
     private int tMonth;
@@ -117,6 +118,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent2 = new Intent(MainActivity.this, NoticeActivity.class);
                 startActivity(intent2);
+            }
+        });
+
+        CardView cardView7 = (CardView) findViewById(R.id.suneung_cardView);
+        cardView7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "2016학년도 수능: 2016.11.17\n         D- " +resultNumber, Toast.LENGTH_LONG).show();
             }
         });
 

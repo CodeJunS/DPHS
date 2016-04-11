@@ -72,26 +72,24 @@ public abstract class ProcessTask extends AsyncTask<Integer, Integer, Long> {
             Lunch = MealLibrary.getMealNew(CountryCode, schulCode,
                     schulCrseScCode, schulKndScCode, "2", year, month, day);
 
-            publishProgress(45);
+            publishProgress(55);
 
             Dinner = MealLibrary.getMealNew(CountryCode, schulCode,
                     schulCrseScCode, schulKndScCode, "3", year, month, day);
 
-            publishProgress(55);
+            publishProgress(75);
 
             Kcal_Lunch = MealLibrary.getKcalNew(CountryCode, schulCode,
                     schulCrseScCode, schulKndScCode, "2", year, month, day);
 
-            publishProgress(75);
+            publishProgress(95);
 
             Kcal_Dinner = MealLibrary.getKcalNew(CountryCode, schulCode,
                     schulCrseScCode, schulKndScCode, "3", year, month, day);
 
-            publishProgress(90);
+            publishProgress(100);
 
             BapTool.saveBapData(mContext, Calender, Lunch, Dinner, Kcal_Lunch, Kcal_Dinner);
-
-            publishProgress(100);
 
         } catch (Exception e) {
             Log.e("ProcessTask Error", "Message : " + e.getMessage());

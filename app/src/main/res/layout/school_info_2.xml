@@ -138,8 +138,8 @@
                         android:id="@+id/imageView6"
                         android:src="@drawable/moklyun"
                         android:layout_below="@+id/textView10"
-                        android:layout_alignStart="@+id/imageView4"
-                        android:layout_marginTop="5dp" />
+                        android:layout_alignLeft="@+id/imageView4"
+                        android:layout_alignStart="@+id/imageView4" />
 
                     <TextView
                         android:id="@+id/textView14"
