@@ -28,6 +28,9 @@ public class MealActivity extends ActionBarActivity {
 
     Toolbar toolbar;
 
+    int DAY_OF_WEEK;
+    int YEAR, MONTH, DAY;
+
     int position_select = 0;
     boolean if_select = false;
     /**
@@ -269,6 +272,11 @@ public class MealActivity extends ActionBarActivity {
                 ab.show();
             }
         });
+
+        Calendar calendar = Calendar.getInstance();              //현재 날짜 불러옴
+        YEAR = calendar.get(Calendar.YEAR);
+        MONTH = calendar.get(Calendar.MONTH);
+        DAY = calendar.get(Calendar.DAY_OF_MONTH);
     }
 
     private void getBapList(boolean isUpdate) {
@@ -365,13 +373,9 @@ public class MealActivity extends ActionBarActivity {
      * 월~금까지는 각자의 요일이 바로 위에 뜨며 토, 일은 월요일이 맨앞에 뜨게 됩니다.
      */
     private void setCurrentItem() {
-        int DAY_OF_WEEK = mCalendar.get(Calendar.DAY_OF_WEEK);
-
-        if (DAY_OF_WEEK > 1 && DAY_OF_WEEK < 7) {
-            mListView.setSelection(DAY_OF_WEEK - 2);
-        } else {
-            mListView.setSelection(0);
-        }
+        final Calendar mToday = Calendar.getInstance();
+        final int DAY = mToday.get(Calendar.DAY_OF_WEEK);
+        mListView.setSelection((DAY - 2)%7);
     }
 
     /**
