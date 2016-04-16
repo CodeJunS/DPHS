@@ -147,7 +147,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:lineSpacingExtra="7dp"
-                        android:text="소나무"
+                        android:text="목련"
                         android:textColor="#3083d0"
                         android:textIsSelectable="true"
                         android:textSize="18sp"

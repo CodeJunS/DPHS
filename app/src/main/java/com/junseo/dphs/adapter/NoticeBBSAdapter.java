@@ -54,8 +54,8 @@ public class NoticeBBSAdapter extends BaseAdapter {
 
         title.setText(nD.getTitle());
         date.setText(nD.getDate());
-        hit.setText(nD.getHit() + "");
-        writer.setText(nD.getWriter() + " 선생님");
+        hit.setText("조회수: " + nD.getHit());
+        writer.setText("작성자: " + nD.getWriter() + " 선생님");
         return v;
     }
 
