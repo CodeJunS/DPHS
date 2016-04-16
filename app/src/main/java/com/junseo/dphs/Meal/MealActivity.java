@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
@@ -27,6 +28,8 @@ import java.util.Calendar;
 public class MealActivity extends ActionBarActivity {
 
     Toolbar toolbar;
+
+    SwipeRefreshLayout mSwipeRefreshLayout;
 
     int DAY_OF_WEEK;
     int YEAR, MONTH, DAY;
@@ -76,6 +79,17 @@ public class MealActivity extends ActionBarActivity {
             public void onClick(View v) {
                 //What to do on back clicked
                 finish();
+            }
+        });
+
+        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swiperefresh);
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getBapList(true);
+
+                if (mSwipeRefreshLayout.isRefreshing())
+                    mSwipeRefreshLayout.setRefreshing(false);
             }
         });
 

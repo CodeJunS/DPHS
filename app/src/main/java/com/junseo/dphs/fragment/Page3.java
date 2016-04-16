@@ -18,7 +18,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.junseo.dphs.R;
 
 @SuppressLint("ValidFragment")

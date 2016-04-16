@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -29,10 +30,11 @@ public class NoticeActivity extends AppCompatActivity implements AbsListView.OnS
 
     Toolbar toolbar;
 
+    SwipeRefreshLayout mSwipeRefreshLayout;
+
     private ConnectivityManager cManager;
     private NetworkInfo mobile;
     private NetworkInfo wifi;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,26 @@ public class NoticeActivity extends AppCompatActivity implements AbsListView.OnS
         } else { //인터넷 체크 통과시 실행할 로직
             }
 
+        LoadNotice();
+
+        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swiperefresh);
+        mSwipeRefreshLayout.setColorSchemeResources(
+                R.color.color_1,
+                R.color.color_2,
+                R.color.color_3,
+                R.color.color_4);
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                LoadNotice();
+                if (mSwipeRefreshLayout.isRefreshing())
+                    mSwipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
+    }
+
+    public void LoadNotice(){
         ListView listView = (ListView) findViewById(R.id.listView);
         noticeBBSAdapter = new NoticeBBSAdapter(this);
         listView.setAdapter(noticeBBSAdapter);
