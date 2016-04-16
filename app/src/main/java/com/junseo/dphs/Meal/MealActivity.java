@@ -375,7 +375,7 @@ public class MealActivity extends ActionBarActivity {
     private void setCurrentItem() {
         final Calendar mToday = Calendar.getInstance();
         final int DAY = mToday.get(Calendar.DAY_OF_WEEK);
-        mListView.setSelection((DAY - 2)%7);
+        mListView.setSelection(DAY - 2);
     }
 
     /**
