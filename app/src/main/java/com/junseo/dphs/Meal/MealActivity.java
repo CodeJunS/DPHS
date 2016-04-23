@@ -89,6 +89,7 @@ public class MealActivity extends ActionBarActivity {
                 getBapList(true);
 
                 if (mSwipeRefreshLayout.isRefreshing())
+                    mSwipeRefreshLayout.setColorSchemeResources(R.color.color_1);
                     mSwipeRefreshLayout.setRefreshing(false);
             }
         });

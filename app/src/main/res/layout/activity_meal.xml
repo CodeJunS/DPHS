@@ -10,18 +10,18 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary" />
 
-    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/swiperefresh"
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:fab="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar" >
+        tools:context=".MainActivity">
 
-        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:fab="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
+        <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/swiperefresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".MainActivity">
+            android:layout_below="@+id/toolbar">
 
             <ListView
                 android:id="@+id/mListView"
@@ -90,6 +90,6 @@
                     fab:fab_size="mini" />
 
             </com.github.clans.fab.FloatingActionMenu>
-        </FrameLayout>
-    </android.support.v4.widget.SwipeRefreshLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </FrameLayout>
 </LinearLayout>
