@@ -3,6 +3,7 @@ package com.junseo.dphs.meal;
 /**
  * Created by Junseo on 16. 3. 2..
  */
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,6 +14,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -87,7 +89,6 @@ public class MealActivity extends ActionBarActivity {
             @Override
             public void onRefresh() {
                 getBapList(true);
-
                 if (mSwipeRefreshLayout.isRefreshing())
                     mSwipeRefreshLayout.setColorSchemeResources(R.color.color_1);
                     mSwipeRefreshLayout.setRefreshing(false);
