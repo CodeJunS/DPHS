@@ -26,7 +26,9 @@ public class SlideManager extends Fragment {
 
     private int layoutResId;
 
-    public SlideManager() {}
+    public SlideManager() {
+
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
