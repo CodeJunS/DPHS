@@ -36,6 +36,8 @@
         <activity android:name=".NoticeActivity"
             android:screenOrientation="portrait"
             android:label="공지사항" />
+        <activity android:name=".HomeActivity"
+            android:label="가정통신문" />
     </application>
 
 </manifest>

@@ -14,5 +14,6 @@ public class FixedVar {
 
     public static final String HP_ROOT = "http://daepyeong.hs.kr";
     public static final String MODULE_NOTICE = "/notice.brd";
+    public static final String MODULE_HOME = "/home.brd";
 
 }

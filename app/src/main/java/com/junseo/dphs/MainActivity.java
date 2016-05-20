@@ -121,8 +121,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        CardView cardView7 = (CardView) findViewById(R.id.suneung_cardView);
+        CardView cardView7 = (CardView) findViewById(R.id.home_CardView);
         cardView7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent3);
+            }
+        });
+
+        CardView cardView8 = (CardView) findViewById(R.id.suneung_cardView);
+        cardView8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "2016학년도 수능: 2016.11.17\n         D- " +resultNumber, Toast.LENGTH_LONG).show();

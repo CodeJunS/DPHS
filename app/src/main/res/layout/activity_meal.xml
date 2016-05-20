@@ -39,7 +39,6 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_gravity="right|bottom"
-            android:layout_margin="@dimen/fab_margin"
             fab:menu_animationDelayPerItem="50"
             fab:menu_backgroundColor="@android:color/transparent"
             fab:menu_buttonSpacing="0dp"
@@ -64,7 +63,8 @@
             fab:menu_shadowRadius="4dp"
             fab:menu_shadowXOffset="1dp"
             fab:menu_shadowYOffset="3dp"
-            fab:menu_showShadow="true">
+            fab:menu_showShadow="true"
+            android:layout_margin="12dp">
 
             <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/share_lunch"
