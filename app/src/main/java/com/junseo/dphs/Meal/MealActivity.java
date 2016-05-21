@@ -11,10 +11,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,7 +26,9 @@ import com.junseo.dphs.R;
 import java.util.Calendar;
 
 
-public class MealActivity extends ActionBarActivity {
+import com.fourmob.datetimepicker.date.DatePickerDialog;
+
+public class MealActivity extends AppCompatActivity {
 
     Toolbar toolbar;
 
@@ -99,6 +100,8 @@ public class MealActivity extends ActionBarActivity {
          * 지금 날짜를 가져오기 위한 Calendar 생성
          */
         mCalendar = Calendar.getInstance();
+
+        getCalendarInstance(true);
 
         /**
          * 리스트뷰를 findViewById하고 mAdapter를 생성합니다.
@@ -293,9 +296,20 @@ public class MealActivity extends ActionBarActivity {
         YEAR = calendar.get(Calendar.YEAR);
         MONTH = calendar.get(Calendar.MONTH);
         DAY = calendar.get(Calendar.DAY_OF_MONTH);
+
     }
 
     private void getBapList(boolean isUpdate) {
+
+        mAdapter.clearData();
+        mAdapter.notifyDataSetChanged();
+
+        getCalendarInstance(false);
+
+        final Calendar mToday = Calendar.getInstance();
+        final int TodayYear = mToday.get(Calendar.YEAR);
+        final int TodayMonth = mToday.get(Calendar.MONTH);
+        final int TodayDay = mToday.get(Calendar.DAY_OF_MONTH);
         /**
          * 기존 데이터를 초기화 합니다.
          */
@@ -366,12 +380,10 @@ public class MealActivity extends ActionBarActivity {
 
                 return;
             }
-
             /**
              * 급식 데이터가 저장되어 있으면 : mData.isBlankDay가 false이면
              * mAdapter에 급식을 추가합니다.
              */
-
             mAdapter.addItem(mData.Calender, mData.DayOfTheWeek, mData.Lunch, mData.Dinner, mData.Kcal_Lunch, mData.Kcal_Dinner);
             mCalendar.add(Calendar.DATE, 1);
         }
@@ -380,9 +392,11 @@ public class MealActivity extends ActionBarActivity {
          * TODO for문이 실행되고 나면 mCalendar의 날짜가 이번주 금요일을 설정되므로 mCalendar의 날짜를 다시 설정해주어야 합니다.
          */
 
+        mCalendar.set(YEAR, MONTH, DAY);
         mAdapter.notifyDataSetChanged();
         setCurrentItem();
     }
+
 
     /**
      * 오늘 날짜에 맞는 급식을 바로 보여주기 위한 메소드
@@ -453,6 +467,7 @@ public class MealActivity extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_meal, menu);
+
         return true;
     }
 
@@ -472,9 +487,42 @@ public class MealActivity extends ActionBarActivity {
             alert.setMessage(" ① 난류\n ② 우유\n ③ 메밀\n ④ 땅콩\n ⑤ 대두\n ⑥ 밀\n ⑦ 고등어\n ⑧ 게\n ⑨ 새우\n ⑩ 돼지고기\n ⑪ 복숭아\n ⑫ 토마토\n ⑬ 아황산염\n ⑭ 호두\n ⑮ 닭고기\n ⑯ 소고기\n ⑰ 오징어\n ⑱ 전복\n ⑲ 홍합");
             alert.show();
 
-            return true;
+        }
+
+        if (id == R.id.action_calendar) {
+            setCalenderBap();
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void setCalenderBap() {
+        getCalendarInstance(false);
+
+        int year = mCalendar.get(Calendar.YEAR);
+        int month = mCalendar.get(Calendar.MONTH);
+        int day = mCalendar.get(Calendar.DAY_OF_MONTH);
+
+        com.fourmob.datetimepicker.date.DatePickerDialog datePickerDialog = com.fourmob.datetimepicker.date.DatePickerDialog.newInstance(new com.fourmob.datetimepicker.date.DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(com.fourmob.datetimepicker.date.DatePickerDialog datePickerDialog, int year, int month, int day) {
+                mCalendar.set(year, month, day);
+                getCalendarInstance(false);
+
+                getBapList(true);
+            }
+        }, year, month, day, false);
+        datePickerDialog.setYearRange(2006, 2030);
+        datePickerDialog.setCloseOnSingleTapDay(false);
+        datePickerDialog.show(getSupportFragmentManager(), "Tag");
+    }
+
+    private void getCalendarInstance(boolean getInstance) {
+        if (getInstance || (mCalendar == null))
+            mCalendar = Calendar.getInstance();
+        YEAR = mCalendar.get(Calendar.YEAR);
+        MONTH = mCalendar.get(Calendar.MONTH);
+        DAY = mCalendar.get(Calendar.DAY_OF_MONTH);
+        DAY_OF_WEEK = mCalendar.get(Calendar.DAY_OF_WEEK);
     }
 }

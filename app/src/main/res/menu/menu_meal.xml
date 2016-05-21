@@ -7,4 +7,10 @@
         android:icon="@drawable/ic_info_24dp"
         app:showAsAction="always"/>
 
+    <item
+        android:id="@+id/action_calendar"
+        android:title="날짜지정"
+        android:icon="@drawable/ic_event_note_48dp"
+        app:showAsAction="always"/>
+
 </menu>

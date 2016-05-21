@@ -116,8 +116,8 @@ public class MainActivity extends AppCompatActivity {
         cardView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(MainActivity.this, NoticeActivity.class);
-                startActivity(intent2);
+                Intent intent3 = new Intent(MainActivity.this, NoticeActivity.class);
+                startActivity(intent3);
             }
         });
 
@@ -125,8 +125,8 @@ public class MainActivity extends AppCompatActivity {
         cardView7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent3 = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(intent3);
+                Intent intent4 = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent4);
             }
         });
 

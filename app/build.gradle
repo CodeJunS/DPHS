@@ -30,4 +30,6 @@ dependencies {
     compile 'net.htmlparser.jericho:jericho-html:3.4'
     compile 'com.github.clans:fab:1.6.2'
     compile 'it.neokree:MaterialTabs:0.11'
+    compile 'com.github.flavienlaurent.datetimepicker:library:0.0.2'
+    compile 'com.github.iammert:MaterialIntroView:1.5.2'
 }
