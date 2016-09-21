@@ -18,7 +18,7 @@ import it.neokree.materialtabs.MaterialTabListener;
 import android.content.Intent;
 import android.net.Uri;
 
-import com.junseo.daepyeong.R;
+import com.junseo.dphs.R;
 
 
 public class School_Info extends ActionBarActivity implements MaterialTabListener {

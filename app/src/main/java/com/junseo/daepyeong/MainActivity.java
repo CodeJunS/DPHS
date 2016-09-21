@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.junseo.daepyeong.helper.SharedPreferenceManager;
 import com.junseo.daepyeong.info.School_Info;
 import com.junseo.daepyeong.var.FixedVar;
+import com.junseo.dphs.R;
 
 import java.util.Calendar;
 

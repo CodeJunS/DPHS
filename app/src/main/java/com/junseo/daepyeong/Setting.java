@@ -13,6 +13,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
+import com.junseo.dphs.R;
+
 /**
  * Created by Junseo on 16. 3. 19..
  */

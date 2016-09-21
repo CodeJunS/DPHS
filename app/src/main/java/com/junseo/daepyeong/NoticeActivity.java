@@ -19,6 +19,7 @@ import com.junseo.daepyeong.data.NoticeBBSData;
 import com.junseo.daepyeong.parse.HtmlParser;
 import com.junseo.daepyeong.util.Util;
 import com.junseo.daepyeong.var.FixedVar;
+import com.junseo.dphs.R;
 
 /**
  * Created by Junseo on 16. 4. 3..

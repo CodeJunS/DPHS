@@ -10,7 +10,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.junseo.daepyeong.R;
+
+import com.junseo.dphs.R;
 
 import java.util.ArrayList;
 

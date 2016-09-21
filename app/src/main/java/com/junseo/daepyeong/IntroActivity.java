@@ -10,6 +10,7 @@ import android.view.View;
 import com.github.paolorotolo.appintro.AppIntro2;
 import com.junseo.daepyeong.helper.SharedPreferenceManager;
 import com.junseo.daepyeong.var.FixedVar;
+import com.junseo.dphs.R;
 
 public class IntroActivity extends AppIntro2 {
     @Override
