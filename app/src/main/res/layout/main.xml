@@ -251,7 +251,7 @@
                     android:textColor="#000000"
                     android:textStyle="bold"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="2016학년도 수능" />
+                    android:text="2018학년도 수능" />
 
                 <TextView
                     android:id="@+id/ddayText"
@@ -260,7 +260,7 @@
                     android:layout_below="@+id/suneung_underBar"
                     android:layout_centerHorizontal="true"
                     android:gravity="center"
-                    android:text="2016.00.00"
+                    android:text="2018.00.00"
                     android:textColor="#808080"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="17sp"
