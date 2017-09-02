@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
 import com.junseo.daepyeong.R;
+import com.junseo.daepyeong.view.BarcodeActivity;
 
 import java.util.Calendar;
 
@@ -370,6 +371,11 @@ public class MealActivity extends AppCompatActivity {
 
         if (id == R.id.action_calendar) {
             setCalenderBap();
+        }
+
+        if (id == R.id.barcode) {
+            Intent intent = new Intent(MealActivity.this, BarcodeActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

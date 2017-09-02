@@ -1,4 +1,4 @@
-package com.junseo.daepyeong;
+package com.junseo.daepyeong.view;
 
 import android.content.DialogInterface;
 import android.graphics.Color;

@@ -16,7 +16,11 @@ apply plugin: 'com.android.application'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -33,4 +37,8 @@ dependencies {
     implementation 'com.github.flavienlaurent.datetimepicker:library:0.0.2'
     implementation 'com.github.iammert:MaterialIntroView:1.5.2'
     implementation files('lib/android_meal_library-5.jar')
+    implementation 'me.dm7.barcodescanner:zbar:1.9.8'
+    implementation 'com.google.zxing:core:3.3.0'
+    implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+    implementation 'gun0912.ted:tedpermission:2.0.0'
 }

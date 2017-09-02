@@ -1,4 +1,4 @@
-package com.junseo.daepyeong;
+package com.junseo.daepyeong.view;
 
 /**
  * Created by Junseo on 16. 2. 27..

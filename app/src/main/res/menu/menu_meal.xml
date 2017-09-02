@@ -2,15 +2,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_settings"
-        android:title="도움말"
-        android:icon="@drawable/ic_info_24dp"
-        app:showAsAction="always"/>
+        android:id="@+id/barcode"
+        android:title="바코드 보기"
+        android:icon="@drawable/ic_credit_card_24dp"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_calendar"
         android:title="날짜지정"
         android:icon="@drawable/ic_event_note_48dp"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="도움말"
+        android:icon="@drawable/ic_info_24dp"
         app:showAsAction="always"/>
 
 </menu>

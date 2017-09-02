@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
 
-        <activity android:name=".MainActivity"
+        <activity android:name=".view.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".IntroActivity"
+        <activity android:name=".view.IntroActivity"
             android:screenOrientation="portrait"
             android:label="intro" />
         <activity android:name=".meal.MealActivity"
@@ -30,14 +32,17 @@
         <activity android:name=".info.School_Info"
             android:screenOrientation="portrait"
             android:label="학교정보" />
-        <activity android:name=".Setting"
+        <activity android:name=".view.Setting"
             android:screenOrientation="portrait"
             android:label="설정" />
-        <activity android:name=".NoticeActivity"
+        <activity android:name=".view.NoticeActivity"
             android:screenOrientation="portrait"
             android:label="공지사항" />
-        <activity android:name=".HomeActivity"
+        <activity android:name=".view.HomeActivity"
             android:label="가정통신문" />
+        <activity android:name=".view.BarcodeActivity" />
+        <activity android:name=".view.ScanBarcode"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>

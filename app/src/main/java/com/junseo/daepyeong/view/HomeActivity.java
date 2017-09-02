@@ -1,4 +1,4 @@
-package com.junseo.daepyeong;
+package com.junseo.daepyeong.view;
 
 import android.graphics.Color;
 import android.net.ConnectivityManager;
@@ -14,19 +14,19 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.junseo.daepyeong.adapter.NoticeBBSAdapter;
-import com.junseo.daepyeong.data.NoticeBBSData;
-import com.junseo.daepyeong.parse.HtmlParser;
+import com.junseo.daepyeong.adapter.HomeBBSAdapter;
+import com.junseo.daepyeong.data.HomeBBSData;
+import com.junseo.daepyeong.parse.HomeParser;
 import com.junseo.daepyeong.util.Util;
 import com.junseo.daepyeong.var.FixedVar;
 import com.junseo.daepyeong.R;
 
 /**
- * Created by Junseo on 16. 4. 3..
+ * Created by Junseo on 2016. 5. 20..
  */
-public class NoticeActivity extends AppCompatActivity implements AbsListView.OnScrollListener {
+public class HomeActivity extends AppCompatActivity implements AbsListView.OnScrollListener {
 
-    private NoticeBBSAdapter noticeBBSAdapter;
+    private HomeBBSAdapter homeBBSAdapter;
     private int preLast;
 
     Toolbar toolbar;
@@ -40,7 +40,7 @@ public class NoticeActivity extends AppCompatActivity implements AbsListView.OnS
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notice);
+        setContentView(R.layout.activity_home);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar); //툴바설정
         toolbar.setTitleTextColor(Color.parseColor("#ffffff"));
@@ -55,10 +55,10 @@ public class NoticeActivity extends AppCompatActivity implements AbsListView.OnS
         });
 
         if (isInternetCon()) { //false 반환시 if 문안의 로직 실행
-            Toast.makeText(NoticeActivity.this, "인터넷에 연결되지않아 불러오기를 중단합니다.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(HomeActivity.this, "인터넷에 연결되지않아 불러오기를 중단합니다.", Toast.LENGTH_SHORT).show();
             finish();
         } else { //인터넷 체크 통과시 실행할 로직
-            }
+        }
 
         LoadNotice();
 
@@ -81,16 +81,16 @@ public class NoticeActivity extends AppCompatActivity implements AbsListView.OnS
 
     public void LoadNotice(){
         ListView listView = (ListView) findViewById(R.id.listView);
-        noticeBBSAdapter = new NoticeBBSAdapter(this);
-        listView.setAdapter(noticeBBSAdapter);
+        homeBBSAdapter = new HomeBBSAdapter(this);
+        listView.setAdapter(homeBBSAdapter);
 
-        new HtmlParser(this, noticeBBSAdapter).execute();
+        new HomeParser(this, homeBBSAdapter).execute();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                NoticeBBSData noticeBBSData = noticeBBSAdapter.getItem(position);
-                Util.openBroswer(NoticeActivity.this, FixedVar.HP_ROOT + noticeBBSData.getUrl());
+                HomeBBSData homeBBSData = homeBBSAdapter.getItem(position);
+                Util.openBroswer(HomeActivity.this, FixedVar.HP_ROOT + homeBBSData.getUrl());
             }
         });
         listView.setOnScrollListener(this);
@@ -111,7 +111,7 @@ public class NoticeActivity extends AppCompatActivity implements AbsListView.OnS
                 if (lastItem == totalItemCount) {
                     if (preLast != lastItem) { //to avoid multiple calls for last item
                         Log.d("Last", "Last");
-                        new HtmlParser(this, noticeBBSAdapter).execute();
+                        new HomeParser(this, homeBBSAdapter).execute();
                         preLast = lastItem;
                     }
                 }
