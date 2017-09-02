@@ -4,24 +4,23 @@ package com.junseo.daepyeong.info;
  * Created by Junseo on 16. 3. 18..
  */
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import com.junseo.daepyeong.R;
 
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
 import it.neokree.materialtabs.MaterialTabListener;
 
-import android.content.Intent;
-import android.net.Uri;
 
-import com.junseo.dphs.R;
-
-
-public class School_Info extends ActionBarActivity implements MaterialTabListener {
+public class School_Info extends AppCompatActivity implements MaterialTabListener {
 
     public View view;
 

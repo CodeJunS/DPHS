@@ -19,7 +19,7 @@ import com.junseo.daepyeong.data.HomeBBSData;
 import com.junseo.daepyeong.parse.HomeParser;
 import com.junseo.daepyeong.util.Util;
 import com.junseo.daepyeong.var.FixedVar;
-import com.junseo.dphs.R;
+import com.junseo.daepyeong.R;
 
 /**
  * Created by Junseo on 2016. 5. 20..

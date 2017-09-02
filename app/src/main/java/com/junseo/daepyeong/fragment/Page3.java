@@ -14,7 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.junseo.dphs.R;
+import com.junseo.daepyeong.R;
 
 @SuppressLint("ValidFragment")
 public class Page3 extends Fragment {

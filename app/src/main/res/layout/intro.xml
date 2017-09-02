@@ -52,7 +52,7 @@
         android:shadowDy="0"
         android:shadowRadius="10"
         android:id="@+id/subTitle"
-        android:text="이 어플리케이션은 대평고등학교를\n위해 만들어졌습니다.\n\n아래 버튼을 눌러 계속하세요."/>
+        android:text="이 어플리케이션은 대평고등학교 학생들을\n위해 만들어졌습니다.\n\n아래 버튼을 눌러 계속하세요."/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="64dp" />

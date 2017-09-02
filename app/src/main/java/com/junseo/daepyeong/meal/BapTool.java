@@ -34,7 +34,7 @@ public class BapTool {
      * Pref Name Format : 2015-02-17-TYPE_index
      * ex) 2015-02-17-1_3
      */
-    public static void saveBapData(Context mContext, String[] Calender, String[] Lunch, String[] Dinner, String[] Kcal_Lunch, String[] Kcal_Dinner) {
+    public static void saveBapData(Context mContext, String[] Calender, String[] Lunch) {
         /**
          * Do not Edit : yyyy.MM.dd(E)
          */
@@ -51,24 +51,15 @@ public class BapTool {
                 int day = mDate.get(Calendar.DAY_OF_MONTH);
 
                 String mPrefLunchName = getBapStringFormat(year, month, day, TYPE_LUNCH);
-                String mPrefDinnerName = getBapStringFormat(year, month, day, TYPE_DINNER);
-                String mPrefKcal_LunchName = getBapStringFormat(year, month, day, TYPE_KCAL_LUNCH);
-                String mPrefKcal_DinnerName = getBapStringFormat(year, month, day, TYPE_KCAL_DINNER);
 
                 String mLunch = Lunch[index];
-                String mDinner = Dinner[index];
-                String mKcal_Lunch = Kcal_Lunch[index];
-                String mKcal_Dinner =  Kcal_Dinner[index];
 
-                if (!MealLibrary.isMealCheck(mLunch)) mLunch = "";
-                if (!MealLibrary.isMealCheck(mDinner)) mDinner = "";
-                if (!MealLibrary.isMealCheck(mKcal_Lunch)) mKcal_Lunch = "";
-                if (!MealLibrary.isMealCheck(mKcal_Dinner)) mKcal_Dinner = "";
+//                if (!MealLibrary.isMealCheck(mLunch)) mLunch = "";
+//                if (!MealLibrary.isMealCheck(mDinner)) mDinner = "";
+//                if (!MealLibrary.isMealCheck(mKcal_Lunch)) mKcal_Lunch = "";
+//                if (!MealLibrary.isMealCheck(mKcal_Dinner)) mKcal_Dinner = "";
 
                 mPref.putString(mPrefLunchName, mLunch);
-                mPref.putString(mPrefDinnerName, mDinner);
-                mPref.putString(mPrefKcal_LunchName, mKcal_Lunch);
-                mPref.putString(mPrefKcal_DinnerName, mKcal_Dinner);
 
             } catch (ParseException e) {
                 e.printStackTrace();
@@ -100,9 +91,6 @@ public class BapTool {
         restoreBapDateClass mData = new restoreBapDateClass();
 
         String mPrefLunchName = getBapStringFormat(year, month + 1, day, TYPE_LUNCH);
-        String mPrefDinnerName = getBapStringFormat(year, month + 1, day, TYPE_DINNER);
-        String mPrefKcal_LunchName = getBapStringFormat(year, month + 1, day, TYPE_KCAL_LUNCH);
-        String mPrefKcal_DinnerName = getBapStringFormat(year, month + 1, day, TYPE_KCAL_DINNER);
 
 //        Log.d("mPrefMorningName", "" + mPrefMorningName);
 //        Log.d("mPrefLunchName", "" + mPrefLunchName);
@@ -111,9 +99,6 @@ public class BapTool {
         mData.Calender = mCalenderFormat.format(mDate.getTime());
         mData.DayOfTheWeek = mDayOfWeekFormat.format(mDate.getTime());
         mData.Lunch = mPref.getString(mPrefLunchName, null);
-        mData.Dinner = mPref.getString(mPrefDinnerName, null);
-        mData.Kcal_Lunch = mPref.getString(mPrefKcal_LunchName, null);
-        mData.Kcal_Dinner = mPref.getString(mPrefKcal_DinnerName, null);
 
 //        Log.d("mData.Calender", "" + mData.Calender);
 //        Log.d("mData.DayOfTheWeek", "" + mData.DayOfTheWeek);
@@ -124,7 +109,7 @@ public class BapTool {
          * TODO 아침 데이터를 체크하는 코드는 필요 없다는 판단하에 추가하지 않음
          * 점심과 저녁이 null이 아니라면 아침도 null이 아니므로
          */
-        if (mData.Lunch == null && mData.Dinner == null) {
+        if (mData.Lunch == null) {
             mData.isBlankDay = true;
         }
 
@@ -140,9 +125,6 @@ public class BapTool {
         public String Calender;
         public String DayOfTheWeek;
         public String Lunch;
-        public String Dinner;
-        public String Kcal_Lunch;
-        public String Kcal_Dinner;
         public boolean isBlankDay = false;
     }
 

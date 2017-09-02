@@ -21,7 +21,7 @@ import android.widget.Toast;
 import com.junseo.daepyeong.helper.SharedPreferenceManager;
 import com.junseo.daepyeong.info.School_Info;
 import com.junseo.daepyeong.var.FixedVar;
-import com.junseo.dphs.R;
+import com.junseo.daepyeong.R;
 
 import java.util.Calendar;
 
@@ -52,9 +52,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        image = (ImageView) findViewById(R.id.image);
+        image = findViewById(R.id.image);
         setSupportActionBar((Toolbar) findViewById(R.id.main_toolbar));
-        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(android.R.color.transparent));
         setPalette();
 
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
         }
 
-        CardView cardView = (CardView) findViewById(R.id.facebook_cardView);
+        CardView cardView = findViewById(R.id.facebook_cardView);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         cardView8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "2016학년도 수능: 2016.11.17\n         D- " +resultNumber, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "2018학년도 수능: 2017.11.16\n         D- " +resultNumber, Toast.LENGTH_LONG).show();
             }
         });
 

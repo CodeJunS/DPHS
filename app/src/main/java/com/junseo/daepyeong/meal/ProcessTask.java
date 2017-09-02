@@ -7,24 +7,15 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import java.util.Arrays;
+
 import toast.library.meal.MealLibrary;
 
 /**
  * Created by whdghks913 on 2015-02-17.
  */
 public abstract class ProcessTask extends AsyncTask<Integer, Integer, Long> {
-    final Context mContext;
-
-    /**
-     * TODO 원하는 학교의 정보를 입력하세요
-     */
-    final String CountryCode = "goe.go.kr"; // 접속 할 교육청 도메인
-    final String schulCode = "J100000527"; // 학교 고유 코드
-    final String schulCrseScCode = "4"; // 학교 종류 코드 1
-    final String schulKndScCode = "04"; // 학교 종류 코드 2
-    final String KNDLUNCH = "2"; //점심
-    final String KNDDINNER = "3"; //저
-    String[] Calender, Lunch, Dinner, Kcal_Lunch, Kcal_Dinner;
+    private final Context mContext;
 
     public abstract void onPreDownload();
 
@@ -52,6 +43,11 @@ public abstract class ProcessTask extends AsyncTask<Integer, Integer, Long> {
     protected Long doInBackground(Integer... params) {
         publishProgress(5);
 
+        final String CountryCode = "ice.go.kr"; // 접속 할 교육청 도메인
+        final String schulCode = "E100001786"; // 학교 고유 코드
+        final String schulCrseScCode = "4"; // 학교 종류 코드 1
+        final String schulKndScCode = "04"; // 학교 종류 코드 2
+
         final String year = Integer.toString(params[0]);
         String month = Integer.toString(params[1] + 1);
         String day = Integer.toString(params[2]);
@@ -61,44 +57,31 @@ public abstract class ProcessTask extends AsyncTask<Integer, Integer, Long> {
         if (day.length() <= 1)
             day = "0" + day;
 
-        publishProgress(25);
+        publishProgress(35);
 
         try {
-            Calender = MealLibrary.getDateNew(CountryCode, schulCode,
+            String[] Calender = MealLibrary.getDateNew(CountryCode, schulCode,
                     schulCrseScCode, schulKndScCode, "1", year, month, day);
 
-            publishProgress(35);
+            publishProgress(50);
 
-            Lunch = MealLibrary.getMealNew(CountryCode, schulCode,
+            String[] Lunch = MealLibrary.getMealNew(CountryCode, schulCode,
                     schulCrseScCode, schulKndScCode, "2", year, month, day);
-
-            publishProgress(55);
-
-            Dinner = MealLibrary.getMealNew(CountryCode, schulCode,
-                    schulCrseScCode, schulKndScCode, "3", year, month, day);
 
             publishProgress(75);
 
-            Kcal_Lunch = MealLibrary.getKcalNew(CountryCode, schulCode,
-                    schulCrseScCode, schulKndScCode, "2", year, month, day);
-
-            publishProgress(95);
-
-            Kcal_Dinner = MealLibrary.getKcalNew(CountryCode, schulCode,
-                    schulCrseScCode, schulKndScCode, "3", year, month, day);
+            BapTool.saveBapData(mContext, Calender, Lunch);
 
             publishProgress(100);
-
-            BapTool.saveBapData(mContext, Calender, Lunch, Dinner, Kcal_Lunch, Kcal_Dinner);
 
         } catch (Exception e) {
             Log.e("ProcessTask Error", "Message : " + e.getMessage());
             Log.e("ProcessTask Error", "LocalizedMessage : " + e.getLocalizedMessage());
 
             e.printStackTrace();
-            return -1l;
+            return -1L;
         }
-        return 0l;
+        return 0L;
     }
 
     @Override
