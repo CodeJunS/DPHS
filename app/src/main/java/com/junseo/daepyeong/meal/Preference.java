@@ -33,6 +33,10 @@ public class Preference {
         return mPref.getString(key, defValue);
     }
 
+    public String getKcal(String key, String defValue) {
+        return mPref.getString(key, defValue);
+    }
+
     public void putBoolean(String key, boolean value) {
         mEditor.putBoolean(key, value).commit();
     }
@@ -42,6 +46,10 @@ public class Preference {
     }
 
     public void putString(String key, String value) {
+        mEditor.putString(key, value).commit();
+    }
+
+    public void putKcal(String key, String value) {
         mEditor.putString(key, value).commit();
     }
 

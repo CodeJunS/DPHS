@@ -3,7 +3,9 @@ package com.junseo.daepyeong.meal;
 /**
  * Created by Junseo on 16. 3. 2..
  */
+
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,16 +24,22 @@ class BapViewHolder {
     public TextView mCalender;
     public TextView mDayOfTheWeek;
     public TextView mLunch;
+    public TextView mKcal;
 }
 
 class BapListData {
     public String mCalender;
     public String mDayOfTheWeek;
     public String mLunch;
+    public String mKcal;
 
     public String getmLunch() {
 
         return mLunch;
+    }
+
+    public String getmKcal() {
+        return mKcal;
     }
 
     public String getmCalender() {
@@ -53,12 +61,13 @@ public class BapListAdapter extends BaseAdapter {
         this.mContext = mContext;
     }
 
-    public void addItem(String mCalender, String mDayOfTheWeek, String mLunch) {
+    public void addItem(String mCalender, String mDayOfTheWeek, String mLunch, String mKcal) {
 
         BapListData addItemInfo = new BapListData();
         addItemInfo.mCalender = mCalender;
         addItemInfo.mDayOfTheWeek = mDayOfTheWeek;
         addItemInfo.mLunch = mLunch;
+        addItemInfo.mKcal = mKcal;
 
         mListData.add(addItemInfo);
     }
@@ -93,12 +102,13 @@ public class BapListAdapter extends BaseAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.row_bap_item, null);
 
-            mHolder.mCalender = (TextView) convertView
+            mHolder.mCalender = convertView
                     .findViewById(R.id.mCalender);
-            mHolder.mDayOfTheWeek = (TextView) convertView
+            mHolder.mDayOfTheWeek = convertView
                     .findViewById(R.id.mDayOfTheWeek);
-            mHolder.mLunch = (TextView) convertView.findViewById(R.id.mLunch);
+            mHolder.mLunch = convertView.findViewById(R.id.mLunch);
             convertView.setTag(mHolder);
+            mHolder.mKcal = convertView.findViewById(R.id.mKcal_Lunch);
 
         } else {
             mHolder = (BapViewHolder) convertView.getTag();
@@ -109,6 +119,7 @@ public class BapListAdapter extends BaseAdapter {
         String mCalender = mData.mCalender;
         String mDayOfTheWeek = mData.mDayOfTheWeek;
         String mLunch = mData.mLunch;
+        String mKcal = mData.mKcal;
 
         /**
          * 급식이 없을경우 없다는 정보를 표시합니다.
@@ -119,6 +130,7 @@ public class BapListAdapter extends BaseAdapter {
         mHolder.mCalender.setText(mCalender);
         mHolder.mDayOfTheWeek.setText(mDayOfTheWeek);
         mHolder.mLunch.setText(mLunch);
+        mHolder.mKcal.setText(mKcal);
         return convertView;
     }
 }

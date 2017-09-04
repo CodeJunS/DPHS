@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.junseo.daepyeong.R;
+import com.junseo.daepyeong.store.BarcodePref;
 
 /**
  * Created by Junseo on 16. 3. 19..
@@ -48,6 +49,9 @@ public class Setting extends PreferenceActivity implements Preference.OnPreferen
         Preference box = (Preference) findPreference("lisence");
         box.setOnPreferenceClickListener(this);
 
+        Preference box2 = findPreference("barcode");
+        box2.setOnPreferenceClickListener(this);
+
     }
 
     @Override
@@ -71,7 +75,14 @@ public class Setting extends PreferenceActivity implements Preference.OnPreferen
                 alert.setTitle("오픈소스 라이센스");
                 alert.setMessage(R.string.open_license);
                 alert.show();
+        }
 
+        switch (preference.getKey()) {
+            case "barcode":
+                final BarcodePref barcodePref = new BarcodePref(this);
+                barcodePref.removeBarcodeData();
+
+                Toast.makeText(this, "정상적으로 제거되었습니다!\n재등록을 원하시면 급식 식단표 확인 - 바코드\n에서 다시 등록해주세요!", Toast.LENGTH_LONG).show();
         }
         return false;
     }

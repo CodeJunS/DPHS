@@ -68,9 +68,14 @@ public abstract class ProcessTask extends AsyncTask<Integer, Integer, Long> {
             String[] Lunch = MealLibrary.getMealNew(CountryCode, schulCode,
                     schulCrseScCode, schulKndScCode, "2", year, month, day);
 
+            String[] Kcal =  MealLibrary.getKcalNew(CountryCode, schulCode,
+                    schulCrseScCode, schulKndScCode, "2", year, month, day);
+
             publishProgress(75);
 
-            BapTool.saveBapData(mContext, Calender, Lunch);
+            BapTool.saveBapData(mContext, Calender, Lunch, Kcal);
+
+            Log.e("ASD", String.valueOf(Kcal));
 
             publishProgress(100);
 

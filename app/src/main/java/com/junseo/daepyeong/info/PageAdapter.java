@@ -46,11 +46,11 @@ public class PageAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new Page1(context);
+                return new Page1();
             case 1:
-                return new Page2(context);
+                return new Page2();
             case 2:
-                return new Page3(context);
+                return new Page3();
             default:
                 return null;
         }

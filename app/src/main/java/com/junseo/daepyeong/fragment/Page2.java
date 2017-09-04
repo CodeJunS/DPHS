@@ -15,10 +15,7 @@ import com.junseo.daepyeong.R;
 
 @SuppressLint("ValidFragment")
 public class Page2 extends Fragment {
-    Context mContext;
-
-    public Page2(Context context) {
-        mContext = context;
+    public Page2() {
     }
 
     @Override

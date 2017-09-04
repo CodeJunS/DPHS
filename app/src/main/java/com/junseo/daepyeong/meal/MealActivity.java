@@ -264,7 +264,7 @@ public class MealActivity extends AppCompatActivity {
              * 급식 데이터가 저장되어 있으면 : mData.isBlankDay가 false이면
              * mAdapter에 급식을 추가합니다.
              */
-            mAdapter.addItem(mData.Calender, mData.DayOfTheWeek, mData.Lunch);
+            mAdapter.addItem(mData.Calender, mData.DayOfTheWeek, mData.Lunch, mData.Kcal);
             mCalendar.add(Calendar.DATE, 1);
         }
 
