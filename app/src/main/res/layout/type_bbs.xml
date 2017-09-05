@@ -23,6 +23,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_gravity="center"
+            card_view:cardUseCompatPadding="true"
             card_view:cardCornerRadius="0.6dp">
 
             <RelativeLayout

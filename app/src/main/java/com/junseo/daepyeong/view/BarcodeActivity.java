@@ -99,6 +99,10 @@ public class BarcodeActivity extends AppCompatActivity {
             } else {
                 permissionCheck();
             }
+        } else {
+            Intent intent = new Intent(BarcodeActivity.this, ScanBarcode.class);
+            startActivity(intent);
+            finish();
         }
     }
 
