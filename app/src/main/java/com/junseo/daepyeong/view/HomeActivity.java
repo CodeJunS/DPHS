@@ -1,5 +1,6 @@
 package com.junseo.daepyeong.view;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -90,7 +91,10 @@ public class HomeActivity extends AppCompatActivity implements AbsListView.OnScr
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 HomeBBSData homeBBSData = homeBBSAdapter.getItem(position);
-                Util.openBroswer(HomeActivity.this, FixedVar.HP_ROOT + homeBBSData.getUrl());
+                //Util.openBroswer(HomeActivity.this, FixedVar.HP_ROOT + homeBBSData.getUrl());
+                Intent intent = new Intent(HomeActivity.this, WebviewActivity.class);
+                intent.putExtra("link", FixedVar.HP_ROOT + homeBBSData.getUrl());
+                startActivity(intent);
             }
         });
         listView.setOnScrollListener(this);

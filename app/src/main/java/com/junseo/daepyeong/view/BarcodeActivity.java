@@ -74,11 +74,12 @@ public class BarcodeActivity extends AppCompatActivity {
                 // 밝기 설정 적용
                 getWindow().setAttributes(params);
 
-                BitMatrix bitMatrix = multiFormatWriter.encode(barcodePref.getBarcodeData(), BarcodeFormat.CODE_39, 4500, 1000);
+                BitMatrix bitMatrix = multiFormatWriter.encode(barcodePref.getBarcodeData(), BarcodeFormat.CODE_39, 3500, 1000);
                 BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
                 Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
                 barcodeimageView.setImageBitmap(bitmap);
                 barcodeTextView.setText(barcodePref.getBarcodeData());
+
             } catch (WriterException e) {
                 e.printStackTrace();
             }

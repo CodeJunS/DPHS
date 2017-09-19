@@ -1,5 +1,6 @@
 package com.junseo.daepyeong.view;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -90,7 +91,10 @@ public class NoticeActivity extends AppCompatActivity implements AbsListView.OnS
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 NoticeBBSData noticeBBSData = noticeBBSAdapter.getItem(position);
-                Util.openBroswer(NoticeActivity.this, FixedVar.HP_ROOT + noticeBBSData.getUrl());
+                //Util.openBroswer(NoticeActivity.this, FixedVar.HP_ROOT + noticeBBSData.getUrl());
+                Intent intent = new Intent(NoticeActivity.this, WebviewActivity.class);
+                intent.putExtra("link", FixedVar.HP_ROOT + noticeBBSData.getUrl());
+                startActivity(intent);
             }
         });
         listView.setOnScrollListener(this);

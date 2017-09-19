@@ -48,7 +48,7 @@ public class ScanBarcode extends AppCompatActivity implements ZBarScannerView.Re
         Log.v(TAG, rawResult.getBarcodeFormat().getName()); // Prints the scan format (qrcode, pdf417 etc.)
 
         Intent intent = new Intent(ScanBarcode.this, BarcodeActivity.class);
-        intent.putExtra("content", rawResult.getContents());
+        intent.putExtra("barcode", rawResult.getContents());
         barcodePref.setBarcodeData(rawResult.getContents());
         onPause();
         startActivity(intent);
