@@ -5,6 +5,7 @@ package com.junseo.daepyeong.data;
  */
 public class NoticeBBSData {
 
+    private String notice;
     private String title;
     private String writer;
     private String date;
@@ -13,6 +14,14 @@ public class NoticeBBSData {
 
     public NoticeBBSData (){
 
+    }
+
+    public String getNotice() {
+        return  notice;
+    }
+
+    public void setNotice(String notice) {
+        this.notice = notice;
     }
 
     public String getTitle() {

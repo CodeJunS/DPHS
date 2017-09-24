@@ -5,6 +5,7 @@ package com.junseo.daepyeong.data;
  */
 public class HomeBBSData {
 
+    private String home;
     private String title;
     private String writer;
     private String date;
@@ -13,6 +14,14 @@ public class HomeBBSData {
 
     public HomeBBSData (){
 
+    }
+
+    public String getHome() {
+        return home;
+    }
+
+    public void setHome(String home) {
+        this.home = home;
     }
 
     public String getTitle() {

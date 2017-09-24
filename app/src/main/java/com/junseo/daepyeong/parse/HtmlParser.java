@@ -3,6 +3,7 @@ package com.junseo.daepyeong.parse;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.text.Html;
 import android.util.Log;
 
 import com.junseo.daepyeong.adapter.NoticeBBSAdapter;
@@ -22,6 +23,7 @@ import org.json.JSONArray;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -123,7 +125,15 @@ public class HtmlParser extends AsyncTask<String, String, String> {
                         JSONArray jsonArray = new JSONArray(jsonStr);
                         for (int i = 1; i < jsonArray.length(); i++) {
                             JSONArray article = jsonArray.getJSONArray(i);
+                            Log.e("이거", article.getJSONArray(0).getString(1));
                             NoticeBBSData nD = new NoticeBBSData();
+
+                            if (Objects.equals(article.getJSONArray(0).getString(1), ":not:tic:")) {
+                                nD.setNotice("[공지]");
+                            } else {
+                                nD.setNotice("");
+                            }
+
                             nD.setTitle(article.getString(6));
                             nD.setDate(article.getJSONArray(2).getString(0));
                             nD.setHit(article.getInt(4));

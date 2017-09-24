@@ -1,6 +1,7 @@
 package com.junseo.daepyeong.adapter;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import com.junseo.daepyeong.data.HomeBBSData;
 import com.junseo.daepyeong.R;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Created by Junseo on 2016-05-20.
@@ -47,12 +49,18 @@ public class HomeBBSAdapter extends BaseAdapter {
         View v = layoutInflater.inflate(R.layout.type_bbs, null);
 
         HomeBBSData nD = nbds.get(position);
-        TextView title = (TextView) v.findViewById(R.id.item_title);
-        TextView date = (TextView) v.findViewById(R.id.item_date);
-        TextView hit = (TextView) v.findViewById(R.id.item_hit);
-        TextView writer = (TextView) v.findViewById(R.id.item_writer);
+        TextView title = v.findViewById(R.id.item_title);
+        TextView date = v.findViewById(R.id.item_date);
+        TextView hit = v.findViewById(R.id.item_hit);
+        TextView writer = v.findViewById(R.id.item_writer);
 
-        title.setText(nD.getTitle());
+        if (Objects.equals(nD.getHome(), "")) {
+            title.setText(nD.getTitle());
+        } else {
+            String styledText = "<font color='red'>[공지] </font>" + nD.getTitle();
+            title.setText(Html.fromHtml(styledText), TextView.BufferType.SPANNABLE);
+        }
+
         date.setText(nD.getDate());
         hit.setText("조회수: " + nD.getHit());
         writer.setText("작성자: " + nD.getWriter() + " 선생님");
