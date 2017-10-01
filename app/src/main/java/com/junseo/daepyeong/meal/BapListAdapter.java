@@ -127,10 +127,13 @@ public class BapListAdapter extends BaseAdapter {
         if (BapTool.mStringCheck(mLunch))
             mLunch = mData.mLunch = mContext.getResources().getString(R.string.no_data_lunch);
 
+        if (BapTool.mStringCheck(mKcal))
+            mKcal = mData.mKcal = "0";
+
         mHolder.mCalender.setText(mCalender);
         mHolder.mDayOfTheWeek.setText(mDayOfTheWeek);
         mHolder.mLunch.setText(mLunch);
-        mHolder.mKcal.setText(mKcal);
+        mHolder.mKcal.setText(mKcal + " Kcal");
         return convertView;
     }
 }

@@ -4,6 +4,8 @@ package toast.library.meal;
  * Created by Junseo on 2017. 9. 5..
  */
 
+import android.util.Log;
+
 import net.htmlparser.jericho.Element;
 import net.htmlparser.jericho.Source;
 
@@ -105,6 +107,7 @@ public class MealLibrary {
                 + schulKndScCode + "&schMmealScCode=" + schMmealScCode
                 + "&schYmd=" + year + "." + month + "." + day;
 
+        Log.d("MealLibrary", url);
         return getKcalSubNew(content, url);
     }
 
@@ -126,11 +129,12 @@ public class MealLibrary {
                 List<?> tbody = ((Element) table.get(i))
                         .getAllElements("tbody");
                 List<?> __tr = ((Element) tbody.get(0)).getAllElements("tr");
-                List<?> __th = ((Element) __tr.get(16)).getAllElements("th");
+                List<?> __th = ((Element) __tr.get(44)).getAllElements("th");
+                Log.e("TD", String.valueOf(__th));
 
                 if (((Element) __th.get(0)).getContent().toString()
                         .equals("에너지(kcal)")) {
-                    List<?> td = ((Element) __tr.get(16)).getAllElements("td");
+                    List<?> td = ((Element) __tr.get(44)).getAllElements("td");
 
                     for (int j = 0; j < 7; j++) {
                         content[j] = ((Element) td.get(j)).getContent()

@@ -75,8 +75,6 @@ public abstract class ProcessTask extends AsyncTask<Integer, Integer, Long> {
 
             BapTool.saveBapData(mContext, Calender, Lunch, Kcal);
 
-            Log.e("ASD", String.valueOf(Kcal));
-
             publishProgress(100);
 
         } catch (Exception e) {
