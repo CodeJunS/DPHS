@@ -59,7 +59,7 @@ public class Setting extends PreferenceActivity implements Preference.OnPreferen
 
         switch (preference.getKey()) {
             case "setting_1-2":
-                Toast.makeText(this, "앱 버전: 5.3", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "앱 버전: 3.3", Toast.LENGTH_SHORT).show();
                 break;
         }
 
