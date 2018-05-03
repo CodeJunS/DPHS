@@ -9,7 +9,8 @@
 * 급식 식단표 파싱 후 제공
 * 학교 정보 제공
 
-#### 공지사항 파싱 후 제공 기능에 대한 설명
-
+## Google Play Download
+[**DOWNLOAD**](https://play.google.com/store/apps/details?id=com.junseo.daepyeong)
 
 ## 참고한 라이브러리
+추가 작성 중
