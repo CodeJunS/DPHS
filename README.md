@@ -17,4 +17,10 @@
 [**DOWNLOAD**](https://play.google.com/store/apps/details?id=com.junseo.daepyeong)
 
 ## 참고한 라이브러리
-추가 작성 중
+* [**App Intro**](https://github.com/JonDouglas/AppIntro)
+* [**Floating Action Button**](https://github.com/Clans/FloatingActionButton)
+* [**Material Tabs**](https://github.com/neokree/MaterialTabs)
+* [**DateTime Picker**](https://github.com/flavienlaurent/datetimepicker)
+* [**Barcode Scanner**](https://github.com/dm77/barcodescanner)
+* [**Barcode Generator**](https://github.com/journeyapps/zxing-android-embedded)
+* [**Android Permission**](https://github.com/ParkSangGwon/TedPermission)
