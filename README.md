@@ -24,3 +24,4 @@
 * [**Barcode Scanner**](https://github.com/dm77/barcodescanner)
 * [**Barcode Generator**](https://github.com/journeyapps/zxing-android-embedded)
 * [**Android Permission**](https://github.com/ParkSangGwon/TedPermission)
+* [**급식 파싱 라이브러리**](https://bitbucket.org/whdghks913/androidmeallibrary)
