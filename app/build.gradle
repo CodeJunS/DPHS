@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-    android {
+android {
     useLibrary 'org.apache.http.legacy'
     compileSdkVersion 27
     buildToolsVersion "27.0.3"
@@ -16,15 +16,15 @@ apply plugin: 'com.android.application'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-        compileOptions {
-            sourceCompatibility JavaVersion.VERSION_1_8
-            targetCompatibility JavaVersion.VERSION_1_8
-        }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
+}
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testApi 'junit:junit:4.12'
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
     api 'com.android.support:appcompat-v7:27.1.1'
     api 'com.android.support:support-v4:27.1.1'
     api 'com.android.support:design:27.1.1'
@@ -35,9 +35,8 @@ dependencies {
     api 'com.github.clans:fab:1.6.2'
     api 'it.neokree:MaterialTabs:0.11'
     api 'com.github.flavienlaurent.datetimepicker:library:0.0.2'
-    api 'com.github.iammert:MaterialIntroView:1.5.2'
     api 'me.dm7.barcodescanner:zbar:1.9.8'
     api 'com.google.zxing:core:3.3.0'
     api 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
-    api 'gun0912.ted:tedpermission:2.0.0'
+    api 'gun0912.ted:tedpermission:2.0.3'
 }
