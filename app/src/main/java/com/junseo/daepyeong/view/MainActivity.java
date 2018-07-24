@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView ddayText;
     private TextView resultText;
 
-    private int dYear = 2017;        //디데이 연월일 변수
+    private int dYear = 2018;        //디데이 연월일 변수
     private int dMonth = 11;
-    private int dDay = 16;
+    private int dDay = 15;
 
     private int tYear;           //오늘 연월일 변수
     private int tMonth;
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         cardView8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "2018학년도 수능: 2017.11.16\n         D- " +resultNumber, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "2019학년도 수능: 2018.11.15\n         D- " +resultNumber, Toast.LENGTH_LONG).show();
             }
         });
 

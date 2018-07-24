@@ -251,7 +251,7 @@
                     android:textColor="#000000"
                     android:textStyle="bold"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="2018학년도 수능" />
+                    android:text="2019학년도 수능" />
 
                 <TextView
                     android:id="@+id/ddayText"
